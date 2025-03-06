@@ -15,6 +15,7 @@ Les données disponibles couvrent plusieurs aspects du festival :
 - **Concerts** : Nombre total de concerts par édition
 - **Éco-responsabilité** : Initiatives environnementales et sociales
 - **Inclusivité** : Engagements en faveur de l'égalité et de la diversité
+- **Musique** : Evolution des genres de musiques représentés
 
 Nous avons contacté le Paléo afin d'obtenir des données supplémentaires, notamment des **plans spatiaux** du festival pour certaines éditions. Ces plans pourraient être vectorisés pour enrichir les visualisations.
 
