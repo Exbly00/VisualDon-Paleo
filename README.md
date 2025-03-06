@@ -46,6 +46,8 @@ Nos visualisations permettront d'illustrer :
 - L'impact croissant des initiatives **écologiques et inclusives**
 - La fréquentation et l'envergure grandissante du festival
 
+La présentation des données se fera de façon exploratoire : l'utilisateur·ice a la possiblité d'explorer par lui-même à travers les éditions présentée, mais également de façon explicative, en mettant en avant certaines tendances (comme l'évolution des genres prédominants)
+
 ## Inspirations
 
 Nous souhaitons nous inspirer des différentes manières de représenter des données musicales. Quelques pistes :
