@@ -82,3 +82,4 @@ Nous sommes en train de rassembler des inspirations pour la représentation des 
 - https://observablehq.com/@d3/radial-stacked-bar-chart/2
 - http://observablehq.com/@d3/grouped-bar-chart/2
 - https://observablehq.com/@d3/streamgraph-transitions
+- https://observablehq.com/@d3/sankey-component?collection=@d3/d3-sankey 
