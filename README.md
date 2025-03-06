@@ -35,8 +35,6 @@ La première étape consiste à **réunir et structurer** toutes les données é
 - L'extraction des **couleurs dominantes** des affiches par édition (en code hexadécimal)
 - La collecte de données textuelles et numériques sur les artistes, genres musicaux et chiffres clés
 
-L'outil recommandé pour le web scraping est : [Web Scraper Extension](https://chromewebstore.google.com/detail/web-scraper-free-web-scra/jnhgnonknehpejjnehehllkliplmbmhn).
-
 ## Objectif
 
 L'objectif principal est de **raconter l'évolution du Paléo Festival à travers ses données**. Le festival reflète non seulement des tendances artistiques mais aussi des préoccupations sociales et écologiques.
