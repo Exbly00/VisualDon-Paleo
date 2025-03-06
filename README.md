@@ -16,6 +16,7 @@ Les données disponibles couvrent plusieurs aspects du festival :
 - **Éco-responsabilité** : Initiatives environnementales et sociales
 - **Inclusivité** : Engagements en faveur de l'égalité et de la diversité
 - **Musique** : Evolution des genres de musiques représentés
+- **Design des affiches** : Evolution des couleurs et styles des affiches du festival
 
 Nous avons contacté le Paléo afin d'obtenir des données supplémentaires, notamment des **plans spatiaux** du festival pour certaines éditions. Ces plans pourraient être vectorisés pour enrichir les visualisations.
 
