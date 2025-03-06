@@ -68,6 +68,8 @@ Notre projet s'articulera autour de deux types de visualisations :
 
 Pour le **14 mars**, nous devons :
 
+Faites un croquis de notre visualisation sur papier ou en utilisant un outil comme Figma ou InVision. Le croquis doit contenir:
+
 - Tout élément que nous aimerions représenter dans notre visualisation nous publierons
 - L'interactivité
 - Rajouter le croquis au README.md que nous avons créé dans l'étape Thématique
