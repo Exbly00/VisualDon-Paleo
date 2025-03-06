@@ -55,7 +55,7 @@ Nous souhaitons nous inspirer des différentes manières de représenter des don
 - **Stream Graphs** pour visualiser l'évolution des genres musicaux
 - **Cartographies spatiales** pour suivre l'agrandissement du festival
 - **Palette Color Extraction** pour dégager les couleurs dominantes des affiches
-- **Timeline interactive** avec sélection d'année
+- **Timeline interactive** avec l'exposition chronologique de chaque édition
 
 ## Vision Globale
 
