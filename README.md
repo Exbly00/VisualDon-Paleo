@@ -78,3 +78,4 @@ Nous sommes en train de rassembler des inspirations pour la représentation des 
 
 - https://observablehq.com/@d3/u-s-population-by-state-1790-1990
 - https://observablehq.com/@d3/radial-stacked-bar-chart/2
+- https://observablehq.com/@d3/streamgraph-transitions
