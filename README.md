@@ -66,11 +66,11 @@ Notre projet s'articulera autour de deux types de visualisations :
 
 ## Prochaines Étapes
 
-Pour le **7 mars**, nous devons :
+Pour le **14 mars**, nous devons :
 
-- Définir précisément quelles données seront extraites et sous quelle forme
-- Approfondir nos recherches sur la **visualisation de données musicales**
-- Créer les premiers prototypes de visualisation
+- Tout élément que nous aimerions représenter dans notre visualisation nous publierons
+- L'interactivité
+- Rajouter le croquis au README.md que nous avons créé dans l'étape Thématique
 
 ## Références Visuelles
 
