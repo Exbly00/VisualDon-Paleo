@@ -64,6 +64,10 @@ Notre projet s'articulera autour de deux types de visualisations :
 - **Ligne temporelle interactive** : Permettra de naviguer par année, avec affichage des affiches, des genres musicaux dominants, et des initiatives sociales/écologiques
 - **Vision globale récapitulative** : Synthèse des couleurs dominantes, des genres musicaux et des chiffres clés sur l'ensemble des éditions
 
+## Nos wireframes
+
+https://www.figma.com/design/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?node-id=2-2&t=YVZj2s656aye778A-1
+
 ## Prochaines Étapes
 
 Pour le **14 mai**, nous devons :
