@@ -66,7 +66,9 @@ Notre projet s'articulera autour de deux types de visualisations :
 
 ## Nos wireframes
 
-https://www.figma.com/design/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?node-id=2-2&t=YVZj2s656aye778A-1
+Page finals_wireframes : https://www.figma.com/design/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?node-id=159-4&t=OCaHJ2LAsBI72HzW-1
+
+Prototype : https://www.figma.com/proto/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?page-id=159%3A4&node-id=159-180&p=f&viewport=122%2C210%2C0.1&t=UYJFZwd688R7jW9Z-1&scaling=contain&content-scaling=fixed&starting-point-node-id=159%3A180
 
 ## Prochaines Étapes
 
