@@ -1,0 +1,20 @@
+body {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+a:hover {
+    color: #F25430;
+}
+
+section {
+    /* chaque section est un container flex en column */
+    flex-direction: column;
+
+    display: none;
+    margin: auto;
+    max-width: 1200px; /* max-width pour les gros écrans... éviter d'avoir une liste de 12'000px de large */
+
+    &.active { /* avec la classe "active", on affiche la section */
+      display: flex;
+    }
+}
