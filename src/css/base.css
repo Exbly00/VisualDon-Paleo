@@ -3,7 +3,7 @@ body {
 }
 
 a:hover {
-    color: #F25430;
+    color: var(--primary-color);
 }
 
 section {
