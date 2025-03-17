@@ -20,8 +20,8 @@ const router = () => {
       displaySection('#editions')
     break;
 
-    case '#displays':
-      displaySection('#displays')
+    case '#posters':
+      displaySection('#posters')
     break;
 
     case '#genres':

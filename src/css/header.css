@@ -25,8 +25,7 @@
   
   /* Style the active/current link*/
   .header a.active {
-    background-color: dodgerblue;
-    color: white;
+    color: #F25430;
   }
   
   /* Float the link section to the right */
