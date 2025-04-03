@@ -93,6 +93,7 @@
       "size": 19,
       "volunteers": 5400,
       "poster": "./img/posters/2024",
+      "dominantColor":"#000000",
       "posterDesigner": "Princess de La Cruz et Tae-Yun Aum"
     },
     "artists": [
@@ -190,6 +191,7 @@
       "size": 19,
       "volunteers": 5500,
       "poster": "./img/posters/2023",
+      "dominantColor":"#B0A8A5",
       "posterDesigner": "Lise Mendes et Son Do"
     },
     "artistes": [
@@ -322,6 +324,7 @@
       "size": 19,
       "volunteers": 5200,
       "poster": "./img/posters/2022",
+      "dominantColor":"#F2A393",
       "posterDesigner": "Julietta Saccardi"
     },
     "artists": [
@@ -454,6 +457,7 @@
       "size": 16.37,
       "volunteers": 4840,
       "poster": "./img/posters/2019",
+      "dominantColor":"#E3023B",
       "posterDesigner": "Perrine Morel et Simon Munoz"
     },
     "artists": [
@@ -572,7 +576,7 @@
       "size": 16.37,
       "volunteers": 4840,
       "poster": "./img/posters/2018",
-
+      "dominantColor":"#D5E5E2",
       "posterDesigner": "Jodie Aeschlimann et Joanne Joho"
     },
     "artists": [
@@ -701,6 +705,7 @@
       "size": 16.38,
       "volunteers": 4800,
       "poster": "./img/posters/2017",
+      "dominantColor":"#F4D50A",
       "posterDesigner": "Catia Ferreira Barreiras et Nausicaa Planche"
     },
     "artists": [
@@ -829,6 +834,7 @@
       "size": 16.15,
       "volunteers": 4770,
       "poster": "./img/posters/2016",
+      "dominantColor":"#D7305E",
       "posterDesigner": "Ana Lourenço & Boris Jordan"
     },
     "artists": [
@@ -884,6 +890,7 @@
       "size": 16.04,
       "volunteers": 5000,
       "poster": "./img/posters/2015",
+      "dominantColor":"#489C54",
       "posterDesigner": "BaseDesign"
     },
     "artists": [
@@ -1032,6 +1039,7 @@
       "size": 15.82,
       "volunteers": 4753,
       "poster": "./img/posters/2014",
+      "dominantColor":"#D42B3B",
       "posterDesigner": "Bilal Sebei"
     },
     "artists": [
@@ -1163,6 +1171,7 @@
       "size": 16.69,
       "volunteers": 4670,
       "poster": "./img/posters/2013",
+      "dominantColor":"#DC194A",
       "posterDesigner": "Marion Erard"
     },
     "artists": [
@@ -1295,6 +1304,7 @@
       "size": 16.46,
       "volunteers": 4565,
       "poster": "./img/posters/2012",
+      "dominantColor":"#EFDB1E",
       "posterDesigner": "Aurélia Farina"
     },
     "artists": [
@@ -1430,6 +1440,7 @@
       "size": 16.3,
       "volunteers": 4415,
       "poster": "./img/posters/2011",
+      "dominantColor":"FFFFFF",
       "posterDesigner": "Kyoungmi KIM"
     },
     "artists": [
@@ -1573,6 +1584,7 @@
       "size": 16,
       "volunteers": 4399,
       "poster": "./img/posters/2010",
+      "dominantColor":"#540C8B",
       "posterDesigner": "Philippe Comte"
     },
     "artists": [
@@ -1710,6 +1722,7 @@
       "size": 16,
       "volunteers": 4300,
       "poster": "./img/posters/2009",
+      "dominantColor":"#EDD0E0",
       "posterDesigner": "Sébastien Fasel"
     },
     "artists": [
@@ -1826,6 +1839,7 @@
       "size": 15.65,
       "volunteers": 4062,
       "poster": "./img/posters/2008",
+      "dominantColor":"#181717",
       "posterDesigner": "Clémentine Bischoff"
     },
     "artists": [
@@ -1959,6 +1973,7 @@
       "size": 14.85,
       "volunteers": 3956,
       "poster": "./img/posters/2007",
+      "dominantColor":"#E6E4D9",
       "posterDesigner": "Anne-Cécile Caillaud"
     },
     "artists": [
@@ -2089,6 +2104,7 @@
       "size": 14.85,
       "volunteers": 3745,
       "poster": "./img/posters/2006",
+      "dominantColor":"#8CC25C",
       "posterDesigner": "Ludovic Gabriel"
     },
     "artists": [
@@ -2215,6 +2231,7 @@
       "size": 14.85,
       "volunteers": 3700,
       "poster": "./img/posters/2005",
+      "dominantColor":"#BDE3E5",
       "posterDesigner": "Pascal Bolle - Jean-Marc Humm, La Fonderie"
     },
     "artists": [
@@ -2344,6 +2361,7 @@
       "size": 14.85,
       "volunteers": 3662,
       "poster": "./img/posters/2004",
+      "dominantColor":"#BDD5E6",
       "posterDesigner": "Happypets Products: Violène Pont, Patrick Monnier, Cédric Henn"
     },
     "artists": [
@@ -2481,6 +2499,7 @@
       "size": 12.45,
       "volunteers": 3476,
       "poster": "./img/posters/2003",
+      "dominantColor":"#DB1D24",
       "posterDesigner": "Vincent Schambacher"
     },
     "artists": [
@@ -2609,6 +2628,7 @@
       "size": 10.3,
       "volunteers": 3496,
       "poster": "./img/posters/2002",
+      "dominantColor":"#F4E2D0",
       "posterDesigner": "Fabien Boshung"
     },
     "artists": [
@@ -2744,6 +2764,7 @@
       "size": 10.3,
       "volunteers": 3450,
       "poster": "./img/posters/2001",
+      "dominantColor":"#C24572",
       "posterDesigner": "Virginie antonin"
     },
     "artists": [
@@ -2856,6 +2877,7 @@
       "size": 9.8,
       "volunteers": 3857,
       "poster": "./img/posters/2000",
+      "dominantColor":"#E05129",
       "posterDesigner": "Fonderie Grafix"
     },
     "artists": [
@@ -2980,6 +3002,7 @@
       "size": 9.1,
       "volunteers": 3593,
       "poster": "./img/posters/1999",
+      "dominantColor":"#19459B",
       "posterDesigner": "Antoine Tinguely"
     },
     "artists": [
@@ -3071,6 +3094,7 @@
       "size": 9.1,
       "volunteers": 3493,
       "poster": "./img/posters/1998",
+      "dominantColor":"#F2A82A",
       "posterDesigner": "Joachim Meyer"
     },
     "artists": [
@@ -3161,6 +3185,7 @@
       "size": 9.1,
       "volunteers": 3266,
       "poster": "./img/posters/1997",
+      "dominantColor":"#FAE9C6",
       "posterDesigner": "Pascal Bolle"
     },
     "artists": [
@@ -3248,6 +3273,7 @@
       "size": 9.1,
       "volunteers": 3139,
       "poster": "./img/posters/1996",
+      "dominantColor":"#DD9F7E",
       "posterDesigner": "Jean-Christophe Alix"
     },
     "artists": [
@@ -3332,6 +3358,7 @@
       "size": 9.1,
       "volunteers": 2825,
       "poster": "./img/posters/1995",
+      "dominantColor":"#08AAB4",
       "posterDesigner": "Pierre Bijotat"
     },
     "artists": [
@@ -3433,6 +3460,8 @@
       "visitors": 179618,
       "size": 5.9,
       "volunteers": 2172,
+      "poster": "./img/posters/1994",
+      "dominantColor":"#56A5B1",
       "posterDesigner": "Frabrice Nassisi"
     },
     "artists": [
@@ -3502,6 +3531,7 @@
       "size": 4.5,
       "volunteers": 1823,
       "poster": "./img/posters/1993",
+      "dominantColor":"#FFFFFF",
       "posterDesigner": "Jean-Marie Gerber"
     },
     "artists": [
@@ -3558,6 +3588,7 @@
       "size": 4.5,
       "volunteers": 1565,
       "poster": "./img/posters/1992",
+      "dominantColor":"#F6A628",
       "posterDesigner": "Laurent Bonnet"
     },
     "artists": [
@@ -3613,6 +3644,7 @@
       "size": 4.5,
       "volunteers": 1383,
       "poster": "./img/posters/1991",
+      "dominantColor":"#F7A71E",
       "posterDesigner": "Pascal Bolle"
     },
     "artists": [
@@ -3683,6 +3715,7 @@
       "size": 4.5,
       "volunteers": 1333,
       "poster": "./img/posters/1990",
+      "dominantColor":"#F6A628",
       "posterDesigner": "Katia Deshusses"
     },
     "artists": [
@@ -3729,6 +3762,7 @@
       "size": 3,
       "volunteers": 1026,
       "poster": "./img/posters/1989",
+      "dominantColor":"#404699",
       "posterDesigner": "Pascal Bolle"
     },
     "artists": [
@@ -3776,7 +3810,8 @@
       "visitors": 76000,
       "size": 3,
       "volunteers": 903,
-      "poster": "./img/posters/1987",
+      "poster": "./img/posters/1988",
+      "dominantColor":"#DA1C23",
       "posterDesigner": "Laurent Mettraux"
     },
     "artists": [
@@ -3832,6 +3867,7 @@
       "size": 3,
       "volunteers": 857,
       "poster": "./img/posters/1987",
+      "dominantColor":"#166485",
       "posterDesigner": "Alain Weber"
     },
     "artists": [
@@ -3891,6 +3927,7 @@
       "size": 3,
       "volunteers": 823,
       "poster": "./img/posters/1986",
+      "dominantColor":"#000000",
       "posterDesigner": "Laurent Berthet"
     },
     "artists": [
@@ -3948,6 +3985,7 @@
       "size": 3.0,
       "volunteers": 720,
       "poster": "./img/posters/1985",
+      "dominantColor":"#EA1B24",
       "posterDesigner": "Daniela Theiler"
     },
     "artists": [
@@ -4009,6 +4047,7 @@
       "size": 3.0,
       "volunteers": 850,
       "poster": "./img/posters/1984",
+      "dominantColor":"#F5B949",
       "posterDesigner": "Trinco"
     },
     "artists": [
@@ -4068,6 +4107,7 @@
       "size": 3.0,
       "volunteers": 700,
       "poster": "./img/posters/1983",
+      "dominantColor":"#0A5289",
       "posterDesigner": "Bernard Bavaud"
     },
     "artists": [
@@ -4130,6 +4170,7 @@
       "size": 3.0,
       "volunteers": 626,
       "poster": "./img/posters/1982",
+      "dominantColor":"#F27927",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4194,6 +4235,7 @@
       "size": 3.0,
       "volunteers": 500,
       "poster": "./img/posters/1981",
+      "dominantColor":"#FFFFFF",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4252,6 +4294,7 @@
       "size": 3.0,
       "volunteers": 450,
       "poster": "./img/posters/1980",
+      "dominantColor":"#F6EFCC",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4312,6 +4355,7 @@
       "size": 2.5,
       "volunteers": 350,
       "poster": "./img/posters/1979",
+      "dominantColor":"#FFFFFF",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4359,6 +4403,18 @@
       { "name": "Van Dango", "genre": "Folk" },
       { "name": "Woodstock Mountains Revue", "genre": "Folk" }
     ],
+    "headline": [
+  "Richie Havens",
+  "Stephen Stills",
+  "Catherine Lara",
+  "Christy Moore",
+  "Donovan",
+  "Planxty",
+  "Silly Wizard",
+  "Michel Bühler",
+  "Lindisfarne",
+  "Andy Irvine"
+],
     "description": "L'édition 79 marque un tournant avec une plus grande diversité musicale et une fréquentation accrue."
   },
   {
@@ -4374,6 +4430,7 @@
       "size": 2.0,
       "volunteers": 250,
       "poster": "./img/posters/1978",
+      "dominantColor":"#605B91",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4415,6 +4472,19 @@
       { "name": "Tri-Yann", "genre": "Folk" },
       { "name": "Ward et Fedrizzi", "genre": "Folk" }
     ],
+    "headline": [
+  "Alain Souchon",
+  "Ry Cooder",
+  "Georges Moustaki",
+  "Loudon Wainwright III",
+  "Fairport Convention",
+  "La Bottine Souriante",
+  "Planxty",
+  "Maddy Prior",
+  "La Chifonnie",
+  "Van Dango"
+],
+
     "description": "Encore appelé 'Nyon Folk Festival', il commence à attirer plus de spectateurs."
   },
   {
@@ -4430,6 +4500,7 @@
       "size": 1.5,
       "volunteers": 150,
       "poster": "./img/posters/1977",
+      "dominantColor":"#08AAE9",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4460,6 +4531,18 @@
       { "name": "Tarot", "genre": "Rock" },
       { "name": "Yvan et Daniel Haefliger", "genre": "Folk" }
     ],
+    "headline": [
+      "Buffy Sainte-Marie",
+      "Richie Havens",
+      "The Chieftains",
+      "Fairport Convention",
+      "Tom Paxton",
+      "Ralph McTell",
+      "Bert Jansch",
+      "Tri-Yann",
+      "Gwendal"
+    ],
+
     "description": "L'événement prend de l'ampleur et se structure davantage."
   },
   {
@@ -4475,6 +4558,7 @@
       "size": 1.0,
       "volunteers": 50,
       "poster": "./img/posters/1976",
+      "dominantColor":"#D4C9B2",
       "posterDesigner": "Pierre-Alain Bertola"
     },
     "artists": [
@@ -4487,6 +4571,11 @@
       { "name": "Malicorne", "genre": "Folk" },
       { "name": "Sarclon", "genre": "Folk" },
       { "name": "Yvan et Daniel Haefliger", "genre": "Folk" }
+    ],
+    "headline": [
+      "John Renbourn",
+      "Malicorne",
+      "Lionel Rocheman"
     ],
     "description": "La première édition du festival, sous le nom de 'Nyon Folk Festival'."
   }
