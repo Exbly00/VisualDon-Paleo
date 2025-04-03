@@ -2,6 +2,7 @@
 
 // Les helpers pour cacher/afficher une section et colorier les liens du menu
 import { displaySection, activateLink } from './section_display.js'
+import { displayEdition } from './sections/editions.js'
 
 const router = () => {
   const hash = window.location.hash || '#home'
@@ -18,6 +19,7 @@ const router = () => {
 
     case '#editions':
       displaySection('#editions')
+      displayEdition();
     break;
 
     case '#posters':
