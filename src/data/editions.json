@@ -2,6 +2,15 @@
   {
     "year": 2025,
     "id": 48,
+    "details": {
+      "scenes": 8,
+      "concerts": 280,
+      "visitors": 250000,
+      "size": 19,
+      "volunteers": 5400,
+      "poster": "./img/posters/2024",
+      "posterDesigner": "Princess de La Cruz et Tae-Yun Aum"
+    },
     "artists": [
       { "name": "Aïta Mon Amour", "genre": "Electro" },
       { "name": "Al-Qasar and Guests", "genre": "Rock" },
