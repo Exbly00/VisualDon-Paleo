@@ -3,13 +3,13 @@
     "year": 2025,
     "id": 48,
     "details": {
-      "scenes": 8,
-      "concerts": 280,
-      "visitors": 250000,
-      "size": 19,
-      "volunteers": 5400,
-      "poster": "./img/posters/2024",
-      "posterDesigner": "Princess de La Cruz et Tae-Yun Aum"
+      "scenes": 0,
+      "concerts": 0,
+      "visitors": 0,
+      "size": 0,
+      "volunteers": 0,
+      "poster": "./img/posters/2025",
+      "posterDesigner": "Chiara Pugliese"
     },
     "artists": [
       { "name": "Aïta Mon Amour", "genre": "Electro" },
@@ -87,7 +87,19 @@
       { "name": "Zaho de Sagazan", "genre": "Pop" },
       { "name": "Zar Electrik", "genre": "Electro" },
       { "name": "Zorza", "genre": "Electro" }
-    ]
+    ],
+    "headline": [
+    "Twenty One Pilots",
+    "Christine and the Queens",
+    "Charlotte Gainsbourg",
+    "Lana Del Rey",
+    "-M-",
+    "The Cure",
+    "Soprano",
+    "Damso",
+    "Lomepal",
+    "Angèle"
+  ]
   },
   {
     "year": 2024,
@@ -185,7 +197,7 @@
       { "name": "Sami Galbi", "genre": "Electro" },
       { "name": "Sean Paul", "genre": "Reggae" }
     ],
-    "headliners": [
+    "headline": [
       "Burna Boy",
       "Gims",
       "Nile Rodgers & CHIC",
