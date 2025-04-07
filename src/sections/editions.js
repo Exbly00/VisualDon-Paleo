@@ -11,6 +11,7 @@ const volunteersElement = document.querySelector('.data-volunteers');
 const genresElement = document.querySelector('.data-genres');
 const headlinersElement = document.querySelector('.data-headliners');
 const rangeInput = document.querySelector('#edition-range');
+const editionYearTitle = document.querySelector("#edition-year");
 
 // Liste des éditions disponibles (de 1976 à 2025, excluant 2020 et 2021)
 const availableYears = Array.from({ length: 50 }, (_, i) => 1976 + i).filter(year => year !== 2020 && year !== 2021);
@@ -23,24 +24,38 @@ function displayEdition(index) {
     const edition = data.find(ed => ed.year === editionYear);
 
     if (edition && edition.details) {
+
+        editionYearTitle.innerText = editionYear;
         // Poster image
         posterImage.src = edition.details.poster || '';
         posterImage.alt = `Affiche de l'édition ${editionYear}`;
 
         // Description
         descriptionElement.textContent = edition.description || 'Aucune description disponible';
-
+        
         // Data
         scenesElement.textContent = edition.details.scenes || 'N/A';
         concertsElement.textContent = edition.details.concerts || 'N/A';
         visitorsElement.textContent = edition.details.visitors || 'N/A';
         volunteersElement.textContent = edition.details.volunteers || 'N/A';
-        genresElement.textContent = edition.artists ? edition.artists.map(artist => artist.genre).join(', ') : 'N/A';
-        headlinersElement.textContent = edition.artists ? edition.artists.slice(0, 5).map(artist => artist.name).join(', ') : 'N/A';
+
+        // Genres uniques
+        if (edition.artists && edition.artists.length > 0) {
+            const uniqueGenres = [...new Set(edition.artists.map(artist => artist.genre))];
+            genresElement.textContent = uniqueGenres.join(', ');
+        } else {
+            genresElement.textContent = 'N/A';
+        }
+
+        // Headliners
+        headlinersElement.textContent = edition.artists
+            ? edition.artists.slice(0, 5).map(artist => artist.name).join(', ')
+            : 'N/A';
     } else {
         console.error('Données manquantes pour l\'édition', edition);
     }
 }
+
 
 // Fonction pour mettre à jour les boutons de navigation
 function updateButtons() {
