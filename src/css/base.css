@@ -56,19 +56,10 @@ section {
     cursor: pointer;
 }
 
-#posters {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 100px;
-    margin: 0 auto; 
-    padding-top: 100px;
-    max-width: 1200px;   
-}
-
-.posters {
-    display: flex;
-    flex-direction: row;
-    gap: 100px;
-    justify-content: center;
-}
+section {
+    display: none;
+  }
+  
+  section.active {
+    display: block;
+  }

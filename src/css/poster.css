@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Ajoute ceci pour centrer horizontalement */
     gap: 100px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding-top: 100px;
-    max-width: 1200px;   
+    max-width: 1200px;
 }
 
 .posters {
@@ -17,7 +18,8 @@
 
 #canvas {
     display: flex;
-    flex-direction: row;
-    gap: 100px;
-    justify-content: center;
+    justify-content: center; 
+    align-items: center;    
+    height: 100%;       
+    width: 100%;             
 }
