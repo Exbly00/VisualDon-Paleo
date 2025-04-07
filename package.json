@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/Exbly00/VisualDon-Paleo#readme",
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "d3": "^7.9.0",
+    "normalize.css": "^8.0.1",
+    "vite": "^6.2.5"
   },
   "keywords": []
 }
