@@ -4,6 +4,7 @@
 import { displaySection, activateLink } from './section_display.js'
 import { displayEdition } from './sections/editions.js'
 import { initPopup } from './sections/editions.js'
+import { displayPoster } from './sections/poster.js'
 
 const router = () => {
   const hash = window.location.hash || '#home'
@@ -26,6 +27,7 @@ const router = () => {
 
     case '#posters':
       displaySection('#posters')
+      displayPoster();
     break;
 
     case '#genres':
