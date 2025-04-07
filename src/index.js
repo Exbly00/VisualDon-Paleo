@@ -4,7 +4,6 @@
 import { displaySection, activateLink } from './section_display.js'
 import { displayEdition } from './sections/editions.js'
 import { initPopup } from './sections/editions.js'
-import { displayGenres } from './sections/genres.js'
 
 const router = () => {
   const hash = window.location.hash || '#home'

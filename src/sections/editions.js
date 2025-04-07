@@ -28,7 +28,7 @@ function displayEdition(index) {
 
         editionYearTitle.innerText = editionYear;
         // Poster image
-        posterImage.src = edition.details.poster || '';
+        posterImage.src = `../assets/posters/${editionYear}.jpg`|| '';
         posterImage.alt = `Affiche de l'édition ${editionYear}`;
 
         // Description
