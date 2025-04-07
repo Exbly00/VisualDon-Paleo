@@ -12,6 +12,7 @@ const genresElement = document.querySelector('.data-genres');
 const headlinersElement = document.querySelector('.data-headliners');
 const rangeInput = document.querySelector('#edition-range');
 const editionYearTitle = document.querySelector("#edition-year");
+const popupContent = document.querySelector(`.popup-content p`);
 
 // Liste des éditions disponibles (de 1976 à 2025, excluant 2020 et 2021)
 const availableYears = Array.from({ length: 50 }, (_, i) => 1976 + i).filter(year => year !== 2020 && year !== 2021);
@@ -46,7 +47,10 @@ function displayEdition(index) {
         } else {
             genresElement.textContent = 'N/A';
         }
-
+        
+        const artists = edition.artists.map(artist => artist.name).join(', ')
+        popupContent.innerText = artists;
+        
         // Headliners
         headlinersElement.textContent = edition.artists
             ? edition.artists.slice(0, 5).map(artist => artist.name).join(', ')
@@ -98,4 +102,34 @@ displayEdition(currentEditionIndex);
 updateButtons();
 updateRange();
 
-export { displayEdition };
+
+export function initPopup() {
+    const popup = document.getElementById('popup');
+    const openBtn = document.querySelector('.programmation-button');
+    const closeBtn = popup.querySelector('.close-button');
+
+    openBtn.addEventListener('click', () => {
+        popup.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        popup.classList.add('hidden');
+    });
+
+    // Optionnel : fermer avec Échap ou clic en dehors
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            popup.classList.add('hidden');
+        }
+    });
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.classList.add('hidden');
+        }
+    });
+}
+
+export { displayEdition};
+
+
