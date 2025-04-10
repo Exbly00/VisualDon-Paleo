@@ -245,7 +245,7 @@
       "dominantColor":"#B0A8A5",
       "posterDesigner": "Lise Mendes et Son Do"
     },
-    "artistes": [
+    "artists": [
       { "name": "Adé", "genre": "Pop" },
       { "name": "Adekunle Gold", "genre": "Pop" },
       { "name": "Alina Pash", "genre": "Rap" },
@@ -301,7 +301,7 @@
       { "name": "João Selva", "genre": "Autres" },
       { "name": "Johan Papaconstantino", "genre": "Pop" },
       { "name": "Josman", "genre": "Rap" },
-      { "name": "KT Gorique", "genre": "Hip hop" },
+      { "name": "KT Gorique", "genre": "Pop" },
       { "name": "Kungs", "genre": "Electro" },
       { "name": "La Colère", "genre": "Rock" },
       { "name": "La Jungle", "genre": "Rock" },
@@ -486,16 +486,16 @@
       { "name": "Rag'n'Bone Man", "genre": "Blues" },
       { "name": "Ramin&Reda", "genre": "Pop" },
       { "name": "Red Axes", "genre": "Electro" },
-      { "name": "Roméo Elvis", "genre": "Hip hop" },
+      { "name": "Roméo Elvis", "genre": "Pop" },
       { "name": "Rōse", "genre": "Pop" },
       { "name": "Sama' Abdulhadi", "genre": "Electro" },
       { "name": "Santrofi", "genre": "Blues" },
-      { "name": "SCH", "genre": "Hip hop" },
+      { "name": "SCH", "genre": "Rap" },
       { "name": "Schnautzi", "genre": "Electro" },
       { "name": "Seun Kuti & Egypt 80", "genre": "Jazz" },
       { "name": "Silver Dust", "genre": "Rock" },
       { "name": "Songhoy Blues", "genre": "Blues" },
-      { "name": "Sopico", "genre": "Hip hop" },
+      { "name": "Sopico", "genre": "Pop" },
       { "name": "STAR FEMININE BAND", "genre": "Autres" },
       { "name": "Sting", "genre": "Rock" },
       { "name": "Stromae", "genre": "Pop" },
@@ -586,7 +586,7 @@
       { "name": "Cirque Alfonse", "genre": "Folk" },
       { "name": "Caballero & JeanJass", "genre": "Rap" },
       { "name": "Columbine", "genre": "Rap" },
-      { "name": "BCUC", "genre": "Funk, Soul" },
+      { "name": "BCUC", "genre": "Blues" },
       { "name": "Loud", "genre": "Rap" },
       { "name": "Etienne de Crécy 'Spache Echo Live'", "genre": "Electro" },
       { "name": "Thylacine", "genre": "Electro" },
@@ -727,7 +727,7 @@
       { "name": "Fréquence Moteur", "genre": "Electro" },
       { "name": "Gerry Oulevay", "genre": "Blues" },
       { "name": "Ghetto Kumbé", "genre": "Autres" },
-      { "name": "Giufà", "genre": "Indie" },
+      { "name": "Giufà", "genre": "Folk" },
       { "name": "Gorillaz", "genre": "Electro" },
       { "name": "H E X", "genre": "Electro" },
       { "name": "Havana meets Kingston", "genre": "Reggae" },
@@ -5185,8 +5185,8 @@
     "featuredTrack": {
     "artist": "Donovan",
     "title": "Mellow Yellow",
-    "genre": "Pop",
-    "url": ""
+    "genre": "Folk",
+    "url": "https://www.youtube.com/watch?v=IQNBQI3UDag"
   },
 
     "description": "Le Festival continue à grandir et accueille notamment Bernard Lavilliers et Higelin."
@@ -5253,23 +5253,17 @@
       { "name": "Woodstock Mountains Revue", "genre": "Folk" }
     ],
     "headline": [
-      "Richie Havens",
-      "Stephen Stills",
-      "Catherine Lara",
-      "Christy Moore",
-      "Donovan",
-      "Planxty",
-      "Silly Wizard",
-      "Michel Bühler",
-      "Lindisfarne",
-      "Andy Irvine"
-    ],
-
+    "Georges Moustaki",
+    "Graeme Allwright",
+    "Alain Souchon",
+    "Laurent Voulzy"
+  ]
+,
 "featuredTrack": {
-      "artist": "Alain Souchon",
-      "title": "Le Fils Parfait",
-      "genre": "Pop",
-      "url": ""
+      "artist": "Graeme Allwright",
+      "title": "Petit garçon",
+      "genre": "Folk",
+      "url": "https://www.youtube.com/watch?v=3j_mmweLt9I"
     },
 
     "description": "L'édition 79 marque un tournant avec une plus grande diversité musicale et une fréquentation accrue."
@@ -5331,7 +5325,6 @@
     ],
     "headline": [
         "Buffy Sainte-Marie",
-        "Fairport Convention",
         "The Chieftains",
         "Bert Jansch",
         "Richie Havens",
@@ -5343,10 +5336,10 @@
 ],
 
 "featuredTrack": {
-      "artist": "Buffy Sainte Marie",
-      "title": "Up Where We Belong",
+      "artist": "Bert Jansch",
+      "title": "Running from Home",
       "genre": "Folk",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=KuYMgqq1LgI"
     },
 
 
@@ -5413,7 +5406,7 @@
     "artist": "Country Joe McDonald",
     "title": "I-Feel-Like-I’m-Fixin’-To-Die-Rag",
     "genre": "Folk",
-    "url": ""
+    "url": "https://www.youtube.com/watch?v=9w_TmB3ggc4"
   },
 
     "description": "L'événement prend de l'ampleur et se structure davantage."
@@ -5453,9 +5446,9 @@
 
     "featuredTrack": {
     "artist": "John Renbourn",
-    "title": "Angie",
+    "title": "Anji",
     "genre": "Folk",
-    "url": ""
+    "url": "https://www.youtube.com/watch?v=g2Pgt2mOJEs"
   },
 
   "description": "La première édition du festival, sous le nom de 'Nyon Folk Festival'."
