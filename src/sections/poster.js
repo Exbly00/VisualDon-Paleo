@@ -11,6 +11,10 @@ function displayPoster() {
     let nextPosterIndex = 1977;
 
     const interval = setInterval(() => {
+        // Skip 2020 and 2021
+        if (previousPosterIndex === 2020) previousPosterIndex = 2022;
+        if (nextPosterIndex === 2020) nextPosterIndex = 2022;
+
         previousPoster.setAttribute("src", `../assets/posters/${previousPosterIndex}.jpg`);
         previousPosterLabel.innerText = previousPosterIndex;
         nextPoster.setAttribute("src", `../assets/posters/${nextPosterIndex}.jpg`);
@@ -20,9 +24,10 @@ function displayPoster() {
         nextPosterIndex++;
 
         if (nextPosterIndex > 2025) {
-            clearInterval(interval); // Stop le carousel à 2025
+            clearInterval(interval);
         }
     }, 4000);
 }
+
 
 export { displayPoster };
