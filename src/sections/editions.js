@@ -24,6 +24,17 @@ function displayEdition(index) {
     const editionYear = availableYears[index];
     const edition = data.find(ed => ed.year === editionYear);
 
+
+    if (!edition) {
+        console.error(`Aucune donnée pour l'année ${editionYear}`);
+        return;
+    }
+
+    if (!edition.details) {
+        console.error(`Détails manquants pour l'édition ${editionYear}`);
+        return;
+    }
+
     if (edition && edition.details) {
 
         editionYearTitle.innerText = editionYear;
@@ -31,8 +42,6 @@ function displayEdition(index) {
         posterImage.src = `../assets/posters/${editionYear}.jpg`|| '';
         posterImage.alt = `Affiche de l'édition ${editionYear}`;
 
-        // Description
-        descriptionElement.textContent = edition.description || 'Aucune description disponible';
         
         // Data
         scenesElement.textContent = edition.details.scenes || 'N/A';
@@ -58,6 +67,11 @@ function displayEdition(index) {
     } else {
         console.error('Données manquantes pour l\'édition', edition);
     }
+
+    const mostPopularGenre = getMostPopularGenreForEdition(edition);
+    descriptionElement.textContent = mostPopularGenre|| 'Aucune description disponible';
+
+
 }
 
 
@@ -103,6 +117,33 @@ updateButtons();
 updateRange();
 
 
+function getMostPopularGenreForEdition(edition) {
+    if (!edition.artists || edition.artists.length === 0) return 'Aucun artiste';
+
+    const genreCount = {};
+
+    edition.artists.forEach(artist => {
+        const genre = artist.genre;
+        if (genre) {
+            genreCount[genre] = (genreCount[genre] || 0) + 1;
+        }
+    });
+
+    let mostPopularGenre = null;
+    let maxCount = 0;
+
+    for (const [genre, count] of Object.entries(genreCount)) {
+        if (count > maxCount) {
+            mostPopularGenre = genre;
+            maxCount = count;
+        }
+    }
+
+    return mostPopularGenre || 'Inconnu';
+}
+
+
+
 export function initPopup() {
     const popup = document.getElementById('popup');
     const openBtn = document.querySelector('.programmation-button');
@@ -130,6 +171,6 @@ export function initPopup() {
     });
 }
 
-export { displayEdition};
+export { displayEdition };
 
 

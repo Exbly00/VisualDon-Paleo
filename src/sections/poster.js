@@ -2,6 +2,13 @@ import data from '../data/editions.json';
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 function displayPoster() {
+    const previousPoster = document.querySelector("#previous-poster");
+    const nextPoster = document.querySelector("#nextPoster");
+
+    let previousPosterIndex = 1976;
+    let nextPosterIndex = 1977;
+
+
     const svg = d3.select("#canvas");
 
     const squareSize = 100;
@@ -40,26 +47,34 @@ function displayPoster() {
     square.attr("fill", "url(#gradient)");
 
     const interval = setInterval(() => {
-        const newColor = data[currentIndex].details.dominantColor || "#3498db";
 
-        // Réinitialise les offsets
-        stopNew
-            .attr("offset", "0%")
-            .attr("stop-color", newColor);
+        previousPoster.setAttribute("src", previousPosterIndex.toString)
+        nextPoster.setAttribute("src", nextPosterIndex.toString)
+            
 
-        stopOld
-            .attr("offset", "0%")
-            .attr("stop-color", previousColor);
 
-        // Anime l'ancienne couleur vers le bas
-        stopOld.transition()
-            .duration(2000)
-            .ease(d3.easeCubicInOut)
-            .attr("offset", "100%");
-
-        previousColor = newColor;
-        currentIndex = currentIndex === 0 ? data.length - 1 : currentIndex - 1;
     }, 4000);
 }
 
 export { displayPoster };
+
+
+//        const newColor = data[currentIndex].details.dominantColor || "#3498db";
+
+        // Réinitialise les offsets
+        // stopNew
+        //     .attr("offset", "0%")
+        //     .attr("stop-color", newColor);
+
+        // stopOld
+        //     .attr("offset", "0%")
+        //     .attr("stop-color", previousColor);
+
+        // // Anime l'ancienne couleur vers le bas
+        // stopOld.transition()
+        //     .duration(2000)
+        //     .ease(d3.easeCubicInOut)
+        //     .attr("offset", "100%");
+
+        // previousColor = newColor;
+        // currentIndex = currentIndex === 0 ? data.length - 1 : currentIndex - 1;
