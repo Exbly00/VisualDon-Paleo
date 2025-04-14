@@ -14,7 +14,7 @@ export async function displayGenres() {
 async function chart() {
   const width = 1400;
   const height = width;
-  const innerRadius = 400;
+  const innerRadius = 250;
   const outerRadius = Math.min(width, height) / 2;
 
   // Préparation des données
@@ -25,18 +25,21 @@ async function chart() {
   console.log(genres);
 
   // Création des séries empilées (stacked data) pour chaque genre
+  // Création des séries empilées (stacked data) pour chaque genre
+  const genreCountsByYear = d3.rollup(
+    data.flatMap((d) =>
+      Array.from(d.genre, ([genre, count]) => ({ year: d.year, genre, count }))
+    ),
+    (v) => v[0].count,
+    (d) => d.year,
+    (d) => d.genre
+  );
+
   const series = d3
     .stack()
-    .keys(genres) // Chaque genre devient une couche empilée
-    .value(([, genreData], genre) => {
-      return genreData.get(genre) || 0;
-    })(
-    // Valeur pour chaque genre par année
-    d3.index(
-      data,
-      (d) => d.year,
-      (d) => d.genre
-    )
+    .keys(genres)
+    .value(([, genreMap], genre) => genreMap.get(genre) || 0)(
+    genreCountsByYear
   );
 
   // Définition des formes d'arc pour chaque segment du graphique
