@@ -1,65 +1,67 @@
 import data from '../data/editions.json';
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
+// Variables globales pour l'intervalle et les indices des posters
+let interval = null;
+let previousPosterIndex = 1976;
+let nextPosterIndex = 1977;
+
 function displayPoster() {
-    const svg = d3.select("#canvas");
+    const previousPoster = document.querySelector("#previous-poster img");
+    const nextPoster = document.querySelector("#next-poster img");
+    const previousPosterLabel = document.querySelector("#previous-poster h3");
+    const nextPosterLabel = document.querySelector("#next-poster h3");
 
-    const squareSize = 100;
-    const svgWidth = 150;
-    const svgHeight = 150;
+    // Mise à jour des posters
+    previousPoster.setAttribute("src", `../assets/posters/${previousPosterIndex}.jpg`);
+    previousPosterLabel.innerText = previousPosterIndex;
+    nextPoster.setAttribute("src", `../assets/posters/${nextPosterIndex}.jpg`);
+    nextPosterLabel.innerText = nextPosterIndex;
 
-    svg.attr("width", svgWidth).attr("height", svgHeight);
+    // Incrémentation des indices
+    previousPosterIndex++;
+    nextPosterIndex++;
 
-    const square = svg.append("rect")
-        .attr("x", (svgWidth - squareSize) / 2)
-        .attr("y", (svgHeight - squareSize) / 2)
-        .attr("width", squareSize)
-        .attr("height", squareSize)
-        .attr("fill", "#eee");
+    // Sauter 2020 et 2021
+    if (previousPosterIndex === 2020) previousPosterIndex = 2022;
+    if (nextPosterIndex === 2020) nextPosterIndex = 2022;
 
-    let previousColor = "#3498db";
-    let currentIndex = data.length - 1;
-
-    // Création du gradient
-    const defs = svg.append("defs");
-    const gradient = defs.append("linearGradient")
-        .attr("id", "gradient")
-        .attr("x1", "0%")
-        .attr("y1", "0%")
-        .attr("x2", "0%")
-        .attr("y2", "100%");
-
-    const stopNew = gradient.append("stop")
-        .attr("offset", "0%")
-        .attr("stop-color", previousColor);
-
-    const stopOld = gradient.append("stop")
-        .attr("offset", "100%")
-        .attr("stop-color", previousColor);
-
-    square.attr("fill", "url(#gradient)");
-
-    const interval = setInterval(() => {
-        const newColor = data[currentIndex].details.dominantColor || "#3498db";
-
-        // Réinitialise les offsets
-        stopNew
-            .attr("offset", "0%")
-            .attr("stop-color", newColor);
-
-        stopOld
-            .attr("offset", "0%")
-            .attr("stop-color", previousColor);
-
-        // Anime l'ancienne couleur vers le bas
-        stopOld.transition()
-            .duration(2000)
-            .ease(d3.easeCubicInOut)
-            .attr("offset", "100%");
-
-        previousColor = newColor;
-        currentIndex = currentIndex === 0 ? data.length - 1 : currentIndex - 1;
-    }, 4000);
+    // Arrêter après 2025
+    if (nextPosterIndex > 2025) {
+        stopCarousel();
+    }
 }
+
+// Démarrer le carousel
+function startCarousel() {
+    if (!interval) { // Pour éviter plusieurs intervalles en parallèle
+        interval = setInterval(displayPoster, 3000); // Intervalle de 3000 ms
+    }
+}
+
+// Arrêter le carousel
+function stopCarousel() {
+    clearInterval(interval);
+    interval = null;
+}
+
+// Fonction de contrôle Play/Pause
+function togglePlayPause() {
+    const playButton = document.querySelector("#play-button");
+
+    if (interval) {
+        stopCarousel();
+        playButton.textContent = "Play"; // Met à jour le texte du bouton
+    } else {
+        startCarousel();
+        playButton.textContent = "Pause"; // Met à jour le texte du bouton
+    }
+}
+
+// Ajouter un événement sur le bouton Play/Pause
+document.querySelector("#play-button").addEventListener("click", togglePlayPause);
+
+// Initialiser le carousel au départ (si tu veux qu'il démarre automatiquement à l'ouverture)
+startCarousel();
 
 export { displayPoster };

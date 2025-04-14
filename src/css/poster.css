@@ -1,25 +1,34 @@
-#posters {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Ajoute ceci pour centrer horizontalement */
-    gap: 100px;
-    margin: 0 auto;
-    padding-top: 100px;
-    max-width: 1200px;
-}
 
 .posters {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 80px;
     justify-content: center;
+    align-items: flex-start;
 }
 
-#canvas {
+/* Style de chaque bloc d'affiche (image + titre) */
+#previous-poster,
+#next-poster {
     display: flex;
-    justify-content: center; 
-    align-items: center;    
-    height: 100%;       
-    width: 100%;             
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pour donner une taille fixe et harmonieuse aux images */
+#previous-poster img,
+#next-poster img {
+    height: 400px;
+    width: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Style des titres sous les affiches */
+#previous-poster h3,
+#next-poster h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
 }
