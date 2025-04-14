@@ -6,14 +6,19 @@ export async function displayGenres() {
   const container = document.querySelector("#genres .viz");
   container.innerHTML = "";
 
+  // Ajout du style pour aligner la visualisation à gauche
+  container.style.textAlign = "left";
+  container.style.display = "flex";
+  container.style.justifyContent = "flex-start";
+
   const svg = await chart();
   container.appendChild(svg);
 }
 
 // Fonction principale qui construit le graphique
 async function chart() {
-  const width = 1400;
-  const height = width;
+  const width = 3000;
+  const height = 1400;
   const innerRadius = 250;
   const outerRadius = Math.min(width, height) / 2;
 
@@ -24,7 +29,6 @@ async function chart() {
   console.log(data);
   console.log(genres);
 
-  // Création des séries empilées (stacked data) pour chaque genre
   // Création des séries empilées (stacked data) pour chaque genre
   const genreCountsByYear = d3.rollup(
     data.flatMap((d) =>
@@ -72,16 +76,21 @@ async function chart() {
     .range(d3.quantize((t) => d3.interpolateSpectral(1 - t), genres.length))
     .unknown("#ccc");
 
-  // Création de l’élément SVG principal
+  // Création de l'élément SVG principal
   const svg = d3
     .create("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("viewBox", [-width / 2, -height / 2, width, height])
+    .attr("viewBox", [0, -height / 2, width, height]) // Modifié pour aligner à gauche
     .attr("style", "width: 100%; height: auto; font: 10px sans-serif;");
 
+  // Création d'un groupe principal pour tous les éléments avec un décalage
+  const mainGroup = svg
+    .append("g")
+    .attr("transform", `translate(${width / 4}, 0)`); // Décalage pour centrer visuellement le cercle
+
   // Ajout des arcs empilés (un arc = un genre pour une année)
-  svg
+  mainGroup
     .append("g")
     .selectAll("g")
     .data(series)
@@ -97,7 +106,7 @@ async function chart() {
     );
 
   // Ajout des lignes et textes pour chaque année
-  svg
+  mainGroup
     .append("g")
     .attr("text-anchor", "middle")
     .selectAll("g")
@@ -122,8 +131,8 @@ async function chart() {
         .text((d) => d)
     );
 
-  // Ajout des cercles et texte pour les niveaux de nombre d’artistes
-  svg
+  // Ajout des cercles et texte pour les niveaux de nombre d'artistes
+  mainGroup
     .append("g")
     .attr("text-anchor", "middle")
     .call((g) =>
@@ -161,7 +170,7 @@ async function chart() {
     );
 
   // Légende : associer une couleur à chaque genre
-  svg
+  mainGroup
     .append("g")
     .selectAll("g")
     .data(color.domain())
@@ -227,7 +236,7 @@ function getCount(d) {
   return d.data[1].get(d.key) || 0;
 }
 
-// Formate les valeurs numériques (ex : "1 000" en français)
+// Formate les valeurs numériques (ex : "1 000" en français)
 function formatValue(x) {
   return isNaN(x) ? "N/A" : x.toLocaleString("fr-FR");
 }
