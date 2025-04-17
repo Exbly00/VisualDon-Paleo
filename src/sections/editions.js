@@ -13,6 +13,7 @@ const headlinersElement = document.querySelector(".data-headliners");
 const rangeInput = document.querySelector("#edition-range");
 const editionYearTitle = document.querySelector("#edition-year");
 const popupContent = document.querySelector(`.popup-content p`);
+const body = document.querySelector("body");
 
 // Liste des éditions disponibles (de 1976 à 2025, excluant 2020 et 2021)
 const availableYears = Array.from({ length: 50 }, (_, i) => 1976 + i).filter(
@@ -72,6 +73,25 @@ function displayEdition(index) {
     console.error("Données manquantes pour l'édition", edition);
   }
 
+  body.style.setProperty("background-color", hexToRgba(edition.details.dominantColor) || "#444");
+
+ 
+}
+
+function hexToRgba(hex, alpha = 0.3) {
+  // Retire le # si présent
+  hex = hex.replace(/^#/, "");
+
+  // Si format court (#abc), on l'étend en #aabbcc
+  if (hex.length === 3) {
+    hex = hex.split("").map(c => c + c).join("");
+  }
+
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
 // Fonction pour mettre à jour les boutons de navigation
