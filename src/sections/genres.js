@@ -105,6 +105,32 @@ async function chart() {
       (d) => `${d.data[0]} - ${d.key}\n${formatValue(getCount(d))} artistes`
     );
 
+  // Créer un groupe pour les éléments interactifs par année
+  const yearInteractionGroup = mainGroup.append("g");
+
+  // Ajout d'éléments invisibles mais cliquables pour chaque année
+  yearInteractionGroup
+    .selectAll("path.year-interaction")
+    .data(x.domain())
+    .join("path")
+    .attr("class", "year-interaction")
+    .attr("d", (year) => {
+      // Créer un arc invisible qui couvre toute la hauteur pour chaque année
+      const yearArc = d3
+        .arc()
+        .innerRadius(innerRadius - 10) // Un peu plus petit que innerRadius pour une meilleure zone de clic
+        .outerRadius(outerRadius + 10) // Un peu plus grand que outerRadius
+        .startAngle(x(year))
+        .endAngle(x(year) + x.bandwidth());
+
+      return yearArc();
+    })
+    .attr("fill", "transparent") // Invisible mais cliquable
+    .attr("cursor", "pointer")
+    .on("click", function (event, year) {
+      updateLegend(year, data, color, mainGroup, outerRadius, height);
+    });
+
   // Ajout des lignes et textes pour chaque année
   mainGroup
     .append("g")
@@ -169,29 +195,111 @@ async function chart() {
         )
     );
 
-  // Légende : associer une couleur à chaque genre
-  mainGroup
+  // Créer un groupe pour la légende (qui sera mis à jour lors des clics)
+  const legendContainer = mainGroup
     .append("g")
-    .selectAll("g")
-    .data(color.domain())
-    .join("g")
-    .attr(
-      "transform",
-      (d, i, nodes) => `translate(-40,${(nodes.length / 2 - i - 1) * 20})`
-    )
-    .call((g) =>
-      g.append("rect").attr("width", 18).attr("height", 18).attr("fill", color)
-    )
-    .call((g) =>
-      g
-        .append("text")
-        .attr("x", 24)
-        .attr("y", 9)
-        .attr("dy", "0.35em")
-        .text((d) => d)
-    );
+    .attr("class", "legend-container");
+
+  // Afficher la légende par défaut avec l'année la plus récente
+  const mostRecentYear = data[data.length - 1].year;
+  updateLegend(mostRecentYear, data, color, mainGroup, outerRadius, height);
 
   return svg.node();
+}
+
+// Fonction pour mettre à jour la légende avec les données d'une année spécifique
+function updateLegend(
+  selectedYear,
+  data,
+  color,
+  mainGroup,
+  outerRadius,
+  height
+) {
+  // Supprimer l'ancienne légende si elle existe
+  mainGroup.select(".legend-container").selectAll("*").remove();
+
+  // Créer un nouveau conteneur pour la légende
+  const legendContainer = mainGroup.select(".legend-container");
+
+  // Trouver les données de l'année sélectionnée
+  const yearData = data.find((d) => d.year === selectedYear);
+  if (!yearData) return; // Si l'année n'est pas trouvée, ne rien faire
+
+  // Calcul du total des artistes pour cette année
+  let totalArtists = 0;
+  yearData.genre.forEach((count) => {
+    totalArtists += count;
+  });
+
+  // Créez un tableau d'objets avec les genres et leurs pourcentages
+  const genrePercentages = Array.from(yearData.genre.entries())
+    .map(([genre, count]) => {
+      return {
+        genre,
+        percentage: Math.round((count / totalArtists) * 100),
+      };
+    })
+    .sort((a, b) => b.percentage - a.percentage); // Tri par pourcentage décroissant
+
+  // Ajout du titre de l'année avec une animation
+  legendContainer
+    .append("text")
+    .attr("transform", `translate(${outerRadius + 100}, -${height / 3})`)
+    .attr("font-size", "36px")
+    .attr("font-weight", "bold")
+    .text(selectedYear);
+
+  // Ajout du titre de la légende
+  legendContainer
+    .append("text")
+    .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 60})`)
+    .attr("font-size", "24px")
+    .text("Les différents genres pendant les");
+
+  legendContainer
+    .append("text")
+    .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 90})`)
+    .attr("font-size", "24px")
+    .text("éditions Paléo festival");
+
+  // Groupe pour les pourcentages et genres
+  const legendGroup = legendContainer
+    .append("g")
+    .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 150})`);
+
+  // Animation pour faire apparaître progressivement les éléments de la légende
+  genrePercentages.forEach((item, i) => {
+    const yPos = i * 40;
+
+    // Pourcentage
+    legendGroup
+      .append("text")
+      .attr("x", 0)
+      .attr("y", yPos)
+      .attr("font-size", "24px")
+      .attr("font-weight", "bold")
+      .attr("fill", d3.color(color(item.genre)).darker(0.5))
+      .attr("opacity", 0) // Commencer invisible
+      .text(`${item.percentage} %`)
+      .transition()
+      .duration(300)
+      .delay(i * 50) // Décaler l'animation pour chaque élément
+      .attr("opacity", 1); // Devenir visible progressivement
+
+    // Genre
+    legendGroup
+      .append("text")
+      .attr("x", 100)
+      .attr("y", yPos)
+      .attr("font-size", "18px")
+      .attr("opacity", 0) // Commencer invisible
+      .text(item.genre)
+      .transition()
+      .duration(300)
+      .delay(i * 50 + 100) // Décaler davantage pour apparaître après le pourcentage
+      .attr("opacity", 1); // Devenir visible progressivement
+  });
 }
 
 // ----------------------------------------
