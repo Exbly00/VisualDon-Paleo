@@ -29,18 +29,17 @@ function displayPoster() {
   if (previousPosterIndex === 2020) previousPosterIndex = 2022;
   if (nextPosterIndex === 2020) nextPosterIndex = 2022;
 
-  // Arrêter après 2025
-  if (nextPosterIndex > 2025) {
-    stopCarousel();
-  }
+    // Arrêter après 2025
+    if (nextPosterIndex > 2025) {
+        stopCarousel();
+    }
 }
 
 // Démarrer le carousel
 function startCarousel() {
-  if (!interval) {
-    // Pour éviter plusieurs intervalles en parallèle
-    interval = setInterval(displayPoster, 3000); // Intervalle de 3000 ms
-  }
+    if (!interval) { // Pour éviter plusieurs intervalles en parallèle
+        interval = setInterval(displayPoster, 3000); // Intervalle de 3000 ms
+    }
 }
 
 // Arrêter le carousel
@@ -61,6 +60,39 @@ function togglePlayPause() {
     playButton.textContent = "Pause"; // Met à jour le texte du bouton
   }
 }
+
+function createGradientSquare (previousColor, nextColor) {
+    const width = 200;
+    const height = 200;
+  
+    const svg = d3.select('body').append('svg')
+      .attr('width', width)
+      .attr('height', height);
+  
+    // Définition du dégradé vertical
+    const gradient = svg.append('defs')
+      .append('linearGradient')
+      .attr('id', 'gradient1')
+      .attr('x1', '0%')
+      .attr('y1', '0%')
+      .attr('x2', '0%')
+      .attr('y2', '100%');
+  
+    gradient.append('stop')
+      .attr('offset', '0%')
+      .attr('style', 'stop-color: #ff7f7f; stop-opacity: 1');
+  
+    gradient.append('stop')
+      .attr('offset', '100%')
+      .attr('style', 'stop-color: #7f7fff; stop-opacity: 1');
+  
+    // Création du rectangle avec le dégradé
+    svg.append('rect')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('fill', 'url(#gradient1)');
+}
+
 
 // Ajouter un événement sur le bouton Play/Pause
 document
