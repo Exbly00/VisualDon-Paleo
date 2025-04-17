@@ -47,7 +47,7 @@ function displayEdition(index) {
     concertsElement.textContent = edition.details.concerts || "N/A";
     visitorsElement.textContent = edition.details.visitors || "N/A";
     volunteersElement.textContent = edition.details.volunteers || "N/A";
-
+    descriptionElement.textContent = "Ceci est un point notable.";
     // Genres uniques
     if (edition.artists && edition.artists.length > 0) {
       const uniqueGenres = [
@@ -72,9 +72,6 @@ function displayEdition(index) {
     console.error("Données manquantes pour l'édition", edition);
   }
 
-  const mostPopularGenre = getMostPopularGenreForEdition(edition);
-  descriptionElement.textContent =
-    mostPopularGenre || "Aucune description disponible";
 }
 
 // Fonction pour mettre à jour les boutons de navigation
@@ -118,30 +115,7 @@ displayEdition(currentEditionIndex);
 updateButtons();
 updateRange();
 
-function getMostPopularGenreForEdition(edition) {
-  if (!edition.artists || edition.artists.length === 0) return "Aucun artiste";
 
-  const genreCount = {};
-
-  edition.artists.forEach((artist) => {
-    const genre = artist.genre;
-    if (genre) {
-      genreCount[genre] = (genreCount[genre] || 0) + 1;
-    }
-  });
-
-  let mostPopularGenre = null;
-  let maxCount = 0;
-
-  for (const [genre, count] of Object.entries(genreCount)) {
-    if (count > maxCount) {
-      mostPopularGenre = genre;
-      maxCount = count;
-    }
-  }
-
-  return mostPopularGenre || "Inconnu";
-}
 
 export function initPopup() {
   const popup = document.getElementById("popup");

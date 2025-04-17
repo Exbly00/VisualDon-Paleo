@@ -10,6 +10,8 @@ export async function displayGenres() {
   container.style.textAlign = "left";
   container.style.display = "flex";
   container.style.justifyContent = "flex-start";
+  container.style.background = "transparent"; // Fond transparent pour le conteneur
+  container.style.overflow = "visible";
 
   const svg = await chart();
   container.appendChild(svg);
@@ -17,17 +19,14 @@ export async function displayGenres() {
 
 // Fonction principale qui construit le graphique
 async function chart() {
-  const width = 3000;
-  const height = 1400;
-  const innerRadius = 250;
-  const outerRadius = Math.min(width, height) / 2;
+  const width = 3200;
+  const height = 1600;
+  const innerRadius = 300;
+  const outerRadius = Math.min(width, height) / 2 - 150;
 
   // Préparation des données
   const data = prepareData(Object.values(rawData));
   const genres = getAllGenres(data);
-
-  console.log(data);
-  console.log(genres);
 
   // Création des séries empilées (stacked data) pour chaque genre
   const genreCountsByYear = d3.rollup(
@@ -46,6 +45,20 @@ async function chart() {
     genreCountsByYear
   );
 
+  // Échelle circulaire (pour placer les années en cercle)
+  const x = d3
+    .scaleBand()
+    .domain(data.map((d) => d.year))
+    .range([0, 2 * Math.PI])
+    .align(0)
+    .paddingInner(0.1); // Augmentation de l'espace entre les segments
+
+  // Échelle radiale (pour déterminer la hauteur des arcs)
+  const y = d3
+    .scaleRadial()
+    .domain([0, d3.max(series, (d) => d3.max(d, (d) => d[1]))])
+    .range([innerRadius, outerRadius]);
+
   // Définition des formes d'arc pour chaque segment du graphique
   const arc = d3
     .arc()
@@ -53,21 +66,8 @@ async function chart() {
     .outerRadius((d) => y(d[1]))
     .startAngle((d) => x(d.data[0]))
     .endAngle((d) => x(d.data[0]) + x.bandwidth())
-    .padAngle(2 / innerRadius)
+    .padAngle(0.03)
     .padRadius(innerRadius);
-
-  // Échelle circulaire (pour placer les années en cercle)
-  const x = d3
-    .scaleBand()
-    .domain(data.map((d) => d.year))
-    .range([0, 2 * Math.PI])
-    .align(0);
-
-  // Échelle radiale (pour déterminer la hauteur des arcs)
-  const y = d3
-    .scaleRadial()
-    .domain([0, d3.max(series, (d) => d3.max(d, (d) => d[1]))])
-    .range([innerRadius, outerRadius]);
 
   // Palette de couleurs associée à chaque genre
   const color = d3
@@ -76,18 +76,29 @@ async function chart() {
     .range(d3.quantize((t) => d3.interpolateSpectral(1 - t), genres.length))
     .unknown("#ccc");
 
-  // Création de l'élément SVG principal
+  // Création de l'élément SVG principal avec fond transparent
   const svg = d3
     .create("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("viewBox", [0, -height / 2, width, height]) // Modifié pour aligner à gauche
-    .attr("style", "width: 100%; height: auto; font: 10px sans-serif;");
+    .attr("viewBox", [0, -height / 2, width, height])
+    .attr(
+      "style",
+      "width: 100%; height: auto; font: 12px sans-serif; background: transparent;"
+    );
 
   // Création d'un groupe principal pour tous les éléments avec un décalage
   const mainGroup = svg
     .append("g")
-    .attr("transform", `translate(${width / 4}, 0)`); // Décalage pour centrer visuellement le cercle
+    .attr("transform", `translate(${width / 4}, 0)`);
+
+  // Ajouter un cercle noir comme fond pour le graphique radial
+  mainGroup
+    .append("circle")
+    .attr("r", outerRadius + 20)
+    .attr("fill", "black")
+    .attr("cx", 0)
+    .attr("cy", 0);
 
   // Ajout des arcs empilés (un arc = un genre pour une année)
   mainGroup
@@ -118,20 +129,36 @@ async function chart() {
       // Créer un arc invisible qui couvre toute la hauteur pour chaque année
       const yearArc = d3
         .arc()
-        .innerRadius(innerRadius - 10) // Un peu plus petit que innerRadius pour une meilleure zone de clic
-        .outerRadius(outerRadius + 10) // Un peu plus grand que outerRadius
+        .innerRadius(innerRadius - 10)
+        .outerRadius(outerRadius + 10)
         .startAngle(x(year))
         .endAngle(x(year) + x.bandwidth());
 
       return yearArc();
     })
-    .attr("fill", "transparent") // Invisible mais cliquable
+    .attr("fill", "transparent")
     .attr("cursor", "pointer")
     .on("click", function (event, year) {
       updateLegend(year, data, color, mainGroup, outerRadius, height);
     });
 
-  // Ajout des lignes et textes pour chaque année
+  // Ajout d'un cercle blanc au centre
+  mainGroup
+    .append("circle")
+    .attr("r", innerRadius)
+    .attr("fill", "white")
+    .attr("cx", 0)
+    .attr("cy", 0);
+
+  // Ajout d'un petit point noir au centre du cercle blanc
+  mainGroup
+    .append("circle")
+    .attr("r", 18)
+    .attr("fill", "black")
+    .attr("cx", 0)
+    .attr("cy", 0);
+
+  // Ajout des lignes et textes pour chaque année (à l'extérieur du cercle)
   mainGroup
     .append("g")
     .attr("text-anchor", "middle")
@@ -143,9 +170,9 @@ async function chart() {
       (d) =>
         `rotate(${
           ((x(d) + x.bandwidth() / 2) * 180) / Math.PI - 90
-        }) translate(${innerRadius},0)`
+        }) translate(${outerRadius + 30},0)` // Déplacé vers l'extérieur
     )
-    .call((g) => g.append("line").attr("x2", -5).attr("stroke", "#000"))
+    .call((g) => g.append("line").attr("x2", -5).attr("stroke", "#fff")) // Ligne blanche
     .call((g) =>
       g
         .append("text")
@@ -154,6 +181,7 @@ async function chart() {
             ? "rotate(90)translate(0,16)"
             : "rotate(-90)translate(0,-9)"
         )
+        .attr("fill", "#fff") // Texte blanc pour les années
         .text((d) => d)
     );
 
@@ -166,6 +194,7 @@ async function chart() {
         .append("text")
         .attr("y", (d) => -y(y.ticks(5).pop()))
         .attr("dy", "-1em")
+        .attr("fill", "#fff") // Texte blanc
         .text("Nombre d'artistes")
     )
     .call((g) =>
@@ -177,7 +206,7 @@ async function chart() {
         .call((g) =>
           g
             .append("circle")
-            .attr("stroke", "#000")
+            .attr("stroke", "#fff") // Cercles blancs
             .attr("stroke-opacity", 0.5)
             .attr("r", y)
         )
@@ -186,11 +215,11 @@ async function chart() {
             .append("text")
             .attr("y", (d) => -y(d))
             .attr("dy", "0.35em")
-            .attr("stroke", "#fff")
+            .attr("stroke", "#000") // Contour noir
             .attr("stroke-width", 5)
             .text(y.tickFormat(5, "s"))
             .clone(true)
-            .attr("fill", "#000")
+            .attr("fill", "#fff") // Texte blanc
             .attr("stroke", "none")
         )
     );
@@ -248,6 +277,7 @@ function updateLegend(
     .attr("transform", `translate(${outerRadius + 100}, -${height / 3})`)
     .attr("font-size", "36px")
     .attr("font-weight", "bold")
+    .attr("fill", "#000") // Couleur noire pour le texte de la légende
     .text(selectedYear);
 
   // Ajout du titre de la légende
@@ -255,12 +285,14 @@ function updateLegend(
     .append("text")
     .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 60})`)
     .attr("font-size", "24px")
+    .attr("fill", "#000") // Couleur noire pour le texte de la légende
     .text("Les différents genres pendant les");
 
   legendContainer
     .append("text")
     .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 90})`)
     .attr("font-size", "24px")
+    .attr("fill", "#000") // Couleur noire pour le texte de la légende
     .text("éditions Paléo festival");
 
   // Groupe pour les pourcentages et genres
@@ -293,6 +325,7 @@ function updateLegend(
       .attr("x", 100)
       .attr("y", yPos)
       .attr("font-size", "18px")
+      .attr("fill", "#000") // Couleur noire pour le texte du genre
       .attr("opacity", 0) // Commencer invisible
       .text(item.genre)
       .transition()

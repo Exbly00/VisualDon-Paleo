@@ -1,0 +1,121 @@
+#edition-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* centrer les éléments horizontalement */
+    justify-content: center; /* centrer les éléments verticalement */
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+}
+#poster-program {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centrer les éléments horizontalement */
+    justify-content: center; /* centrer les éléments verticalement */
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    gap: 30px;
+}
+
+#edition {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    gap: 0.5rem; /* optionnel : espace entre les boutons */
+
+}
+
+#edition button {
+    width: auto;
+    height: auto;
+    padding: 0.25rem 0.5rem; /* important pour le rendu du texte */
+    font: inherit;
+    color:  #F25430;
+    background: none;
+    border: 1px solid  #F25430;
+    border-radius: 4px; /* un petit arrondi sympa */
+    white-space: nowrap;
+}
+
+#all {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centrer les éléments horizontalement */
+    justify-content: center; /* centrer les éléments verticalement */
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+#editions dt {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 1rem 0;
+    background: transparent;
+  }
+  
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #F25430;
+    border-radius: 4px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: white;
+    border: 2px solid #F25430;
+    border-radius: 50%;
+    margin-top: -6px; /* aligne le pouce avec la track */
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-track {
+    height: 8px;
+    background: #F25430;
+    border-radius: 4px;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    background: white;
+    border: 2px solid #F25430;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+
+  #datas {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* espace entre les deux colonnes */
+    justify-content: center;
+  }
+  
+  .data-column dl {
+    margin: 0;
+  }
+  
+  .data-column dt {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .data-column dd {
+    margin: 0 0 1rem 0;
+  }
+  
