@@ -33,6 +33,7 @@
     </section>
     <!------------------------------------------------------------------------------------------------------------>
     <section id="editions">
+      <div id="all">
       <h1 id = "edition-year">Les éditions</h1>
       <div id="edition">
         <button class="button previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
@@ -50,32 +51,39 @@
           </div>
           <div id="edition-details">
             <div id="datas">
-              <dl>
-                <dt>Scène</dt>
-                <dd class="data-scenes">3</dd>
-                <dt>Concerts</dt>
-                <dd class="data-concerts">3</dd>
-                <dt>Visiteurs</dt>
-                <dd class="data-visitors">3</dd>
-                <dt>Volontaires</dt>
-                <dd class="data-volunteers">3</dd>
-                <dt>Genres</dt>
-                <dd class="data-genres">3</dd>
-                <dt>Headliners</dt>
-                <dd class="data-headliners">3</dd>
-              </dl>
+              <div class="data-column">
+                <dl>
+                  <dt>Scène</dt>
+                  <dd class="data-scenes">3</dd>
+                  <dt>Concerts</dt>
+                  <dd class="data-concerts">3</dd>
+                  <dt>Visiteurs</dt>
+                  <dd class="data-visitors">3</dd>
+                  <dt>Volontaires</dt>
+                  <dd class="data-volunteers">3</dd>
+                </dl>
+              </div>
+              <div class="data-column">
+                <dl>
+                  <dt>Genres</dt>
+                  <dd class="data-genres">3</dd>
+                  <dt>Headliners</dt>
+                  <dd class="data-headliners">3</dd>
+                </dl>
+              </div>
             </div>
+          
             <div id="description">
               <h3>Points notables</h3>
               <p>Changement de nom, car il est désormais certain que Paléo s'installera dès l'été 1984 à Vich, un petit village situé à 5 kilomètres de Nyon. Fin novembre, Paléo prend une terrible douche froide : la commune de Vich refuse que le Festival s'installe sur son territoire. Retour au point de départ.</p>
             </div>
           </div>
+          
         </article>
         <button class="button next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
       </div>
-      <label for="edition-range">Sélectionner une édition</label>
-      <input id="edition-range" type="range" min="1" max="48" step="1">
-      
+    <input id="edition-range" type="range" min="1" max="48" step="1">
+    </div> 
     </section>
     
     
