@@ -33,18 +33,6 @@
 
 }
 
-#edition button {
-    width: auto;
-    height: auto;
-    padding: 0.25rem 0.5rem; /* important pour le rendu du texte */
-    font: inherit;
-    color:  #F25430;
-    background: none;
-    border: 1px solid  #F25430;
-    border-radius: 4px; /* un petit arrondi sympa */
-    white-space: nowrap;
-}
-
 #all {
     display: flex;
     flex-direction: column;
@@ -119,3 +107,6 @@ input[type="range"] {
     margin: 0 0 1rem 0;
   }
   
+#popup {
+    line-height: 1.5;
+}

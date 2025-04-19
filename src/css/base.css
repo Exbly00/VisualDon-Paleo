@@ -63,3 +63,29 @@ section {
   section.active {
     display: block;
   }
+
+
+  button {
+    width: auto;
+    height: auto;
+    padding: 0.25rem 0.5rem; /* important pour le rendu du texte */
+    font: inherit;
+    color:  #F25430;
+    background: none;
+    border: 1px solid  #F25430;
+    border-radius: 4px; /* un petit arrondi sympa */
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #F25430;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
