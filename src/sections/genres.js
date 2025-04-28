@@ -170,7 +170,7 @@ async function chart() {
       (d) =>
         `rotate(${
           ((x(d) + x.bandwidth() / 2) * 180) / Math.PI - 90
-        }) translate(${outerRadius + 30},0)` // Déplacé vers l'extérieur
+        }) translate(${outerRadius + 60},0)` // Déplacé vers l'extérieur
     )
     .call((g) => g.append("line").attr("x2", -5).attr("stroke", "#fff")) // Ligne blanche
     .call((g) =>
@@ -181,7 +181,8 @@ async function chart() {
             ? "rotate(90)translate(0,16)"
             : "rotate(-90)translate(0,-9)"
         )
-        .attr("fill", "#fff") // Texte blanc pour les années
+        .attr("fill", "#000") // Texte noir pour les années
+        .attr("font-size", "24px") // Ajoutez cette ligne pour définir la taille du texte
         .text((d) => d)
     );
 
