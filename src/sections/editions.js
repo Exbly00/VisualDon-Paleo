@@ -93,9 +93,22 @@ function hexToRgba(hex, alpha = 0.3) {
 
 // Fonction pour mettre à jour les boutons de navigation
 function updateButtons() {
+  previousButton.style.display = "block";
+  nextButton.style.display = "block";
+
   const yearIndex = availableYears.indexOf(currentEditionYear);
+  
   previousButton.disabled = yearIndex === 0;
   nextButton.disabled = yearIndex === availableYears.length - 1;
+  previousButton.innerText = `${availableYears[yearIndex - 1]}`;
+  nextButton.innerText = `${availableYears[yearIndex + 1]}`;
+
+  if(yearIndex === 0) {
+    previousButton.style.display = "none";
+  }
+  if(yearIndex === availableYears.length - 1) {
+    nextButton.style.display = "none";
+  }
 }
 
 // Mettre à jour la valeur du range

@@ -148,3 +148,11 @@ input[type="range"] {
   object-fit: contain;           /* assure que l'image ne se déforme pas */
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
+
+.next-button, .previous-button {
+  border: none;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: black;
+  z-index: 1;
+}
