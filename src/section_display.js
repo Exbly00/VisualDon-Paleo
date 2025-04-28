@@ -6,6 +6,7 @@ const displaySection = (id) => {
 
   // On essaie de trouver la section qui correspond à l'id passé
   document.querySelector(id)?.classList.add('active')
+
 }
 
 // Active le lien correspondant à la section affichée

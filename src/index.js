@@ -5,6 +5,7 @@ import { displaySection, activateLink } from "./section_display.js";
 import { displayEdition } from "./sections/editions.js";
 import { initPopup } from "./sections/editions.js";
 import { displayGenres } from "./sections/genres.js";
+import { displayPoster } from "./sections/poster.js";
 
 const router = () => {
   const hash = window.location.hash || "#home";
@@ -20,13 +21,19 @@ const router = () => {
       break;
 
     case "#editions":
-      displaySection("#editions");
-      displayEdition();
+      if(hashSplit[1]) {
+        displaySection("#editions");
+        displayEdition(hashSplit[1]);
+      } else {
+        displaySection("#editions");
+        displayEdition(1976);
+      }
       initPopup();
       break;
 
     case "#posters":
       displaySection("#posters");
+      displayPoster();
       break;
 
     case "#genres":
@@ -38,5 +45,4 @@ const router = () => {
 
 window.addEventListener("hashchange", router);
 
-// Appelé une fois dans le vide, pour mettre à jour l'état de l'app selon l'url demandée au chargement de la page
 router();

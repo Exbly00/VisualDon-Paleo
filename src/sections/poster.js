@@ -12,14 +12,12 @@ function displayPoster() {
   const nextPoster = document.querySelector("#next-poster img");
   const previousPosterLabel = document.querySelector("#previous-poster h3");
   const nextPosterLabel = document.querySelector("#next-poster h3");
+  const body = document.querySelector("body");
 
+
+  body.style.setProperty("background-color", "white");
+  console.log("ok");
 
 }
-
-
-document
-  .querySelector("#play-button")
-  .addEventListener("click", togglePlayPause);
-
 
 export { displayPoster };
