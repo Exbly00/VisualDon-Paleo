@@ -34,45 +34,22 @@
     <!------------------------------------------------------------------------------------------------------------>
     <section id="editions">
       <div id="all">
-        <h1 id="edition-year">Les éditions</h1>
-        <div id="edition">
-        <div>
-            <div>
-          <button
-            class="button previous-button"
-            aria-label="Voir l'édition précédente"
-          >
-            Édition précédente
-          </button>
-          <svg id="left-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
-        </div>
-            <svg id="left-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+      <h1 id = "edition-year">Les éditions</h1>
+      <div id="edition">
+        <div class="nav-button">        
+          <button class="button previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
         </div>
         <article id="edition-content">
-            <div id="poster-program">
-              <img
-                src="../assets/posters/IMG_0203.JPG"
-                style="height: 400px"
-                alt="Affiche de l'édition avec des détails visuels sur le programme"
-              />
-              <button
-                class="button programmation-button"
-                aria-label="Voir la programmation"
-              >
-                Programmation
-              </button>
-              <div
-                id="popup"
-                class="popup hidden"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="popup-title"
-              >
-                <div class="popup-content">
+          <div id="poster-program">
+            <img src="../assets/posters/IMG_0203.JPG"  alt="Affiche de l'édition avec des détails visuels sur le programme" />
+            <button class="button programmation-button" aria-label="Voir la programmation">Programmation</button>
+            <div id="popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+              <div class="popup-content">
                   <h2 id="popup-title">Programmation</h2>
                   <p>Voici la programmation du festival…</p>
                   <button class="close-button" aria-label="Fermer la fenêtre">
-                    x
+                  
                   </button>
                 </div>
               </div>
@@ -112,16 +89,17 @@
                 </p>
               </div>
             </div>
-          </article>
-          <button
-            class="button next-button"
-            aria-label="Voir l'édition suivante"
-          >
-            Édition suivante
-          </button>
-        </div>
-        <input id="edition-range" type="range" min="1" max="48" step="1" />
+            <div class="nav-button">
+              <button class="button next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M22 12H2"/></svg>
+            </div>
+          </div>
+        </article>
+
       </div>
+      
+    <input id="edition-range" type="range" min="1" max="48" step="1">
+    </div> 
     </section>
 
     <!------------------------------------------------------------------------------------------------------------>
