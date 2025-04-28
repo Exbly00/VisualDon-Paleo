@@ -272,67 +272,66 @@ function updateLegend(
     })
     .sort((a, b) => b.percentage - a.percentage); // Tri par pourcentage décroissant
 
-  // Ajout du titre de l'année avec une animation
+  // Position de base pour la légende (ajusté pour avoir plus d'espace)
+  const legendX = outerRadius + 300; // Plus d'espace entre le graphique et la légende
+  const legendY = -height / 4; // Ajustement vertical
+
+  // Ajout de l'année en gros et en gras (comme dans le wireframe)
   legendContainer
     .append("text")
-    .attr("transform", `translate(${outerRadius + 100}, -${height / 3})`)
-    .attr("font-size", "36px")
+    .attr("transform", `translate(${legendX}, ${legendY - 80})`)
+    .attr("font-size", "70px") // Plus grand comme dans le wireframe
     .attr("font-weight", "bold")
-    .attr("fill", "#000") // Couleur noire pour le texte de la légende
+    .attr("fill", "#000")
     .text(selectedYear);
 
-  // Ajout du titre de la légende
+  // Ajout du titre sur deux lignes
   legendContainer
     .append("text")
-    .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 60})`)
-    .attr("font-size", "24px")
-    .attr("fill", "#000") // Couleur noire pour le texte de la légende
-    .text("Les différents genres pendant les");
-
-  legendContainer
-    .append("text")
-    .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 90})`)
-    .attr("font-size", "24px")
-    .attr("fill", "#000") // Couleur noire pour le texte de la légende
-    .text("éditions Paléo festival");
+    .attr("transform", `translate(${legendX}, ${legendY})`)
+    .attr("font-size", "48px")
+    .attr("fill", "#000")
+    .text("Les différents genres pendant les éditions Paléo festival");
 
   // Groupe pour les pourcentages et genres
   const legendGroup = legendContainer
     .append("g")
-    .attr("transform", `translate(${outerRadius + 100}, -${height / 3 - 150})`);
+    .attr("transform", `translate(${legendX}, ${legendY + 90})`); // Position ajustée
 
-  // Animation pour faire apparaître progressivement les éléments de la légende
+  // Ajouter chaque entrée de légende selon le wireframe sur 2 colonnes
   genrePercentages.forEach((item, i) => {
-    const yPos = i * 40;
+    // Détermine si l'élément est dans la première ou deuxième colonne
+    const column = i < Math.ceil(genrePercentages.length / 2) ? 0 : 1;
 
-    // Pourcentage
+    // Recalcule l'index pour la position verticale dans chaque colonne
+    const columnIndex =
+      column === 0 ? i : i - Math.ceil(genrePercentages.length / 2);
+    const yPos = columnIndex * 60; // Espacement vertical
+
+    // Décalage horizontal pour la deuxième colonne (ajustez selon vos besoins)
+    const xOffset = column * 300; // Distance entre les colonnes
+
+    const percentText =
+      item.percentage < 10 ? `0${item.percentage} %` : `${item.percentage} %`;
+
+    // Pourcentage avec la couleur correspondante
     legendGroup
       .append("text")
-      .attr("x", 0)
+      .attr("x", xOffset)
       .attr("y", yPos)
-      .attr("font-size", "24px")
+      .attr("font-size", "40px")
       .attr("font-weight", "bold")
-      .attr("fill", d3.color(color(item.genre)).darker(0.5))
-      .attr("opacity", 0) // Commencer invisible
-      .text(`${item.percentage} %`)
-      .transition()
-      .duration(300)
-      .delay(i * 50) // Décaler l'animation pour chaque élément
-      .attr("opacity", 1); // Devenir visible progressivement
+      .attr("fill", d3.color(color(item.genre)))
+      .text(percentText);
 
-    // Genre
+    // Genre (en noir, aligné à droite des pourcentages)
     legendGroup
       .append("text")
-      .attr("x", 100)
+      .attr("x", xOffset + 120) // Espacement entre le pourcentage et le genre
       .attr("y", yPos)
-      .attr("font-size", "18px")
-      .attr("fill", "#000") // Couleur noire pour le texte du genre
-      .attr("opacity", 0) // Commencer invisible
-      .text(item.genre)
-      .transition()
-      .duration(300)
-      .delay(i * 50 + 100) // Décaler davantage pour apparaître après le pourcentage
-      .attr("opacity", 1); // Devenir visible progressivement
+      .attr("font-size", "40px")
+      .attr("fill", "#000")
+      .text(item.genre);
   });
 }
 
