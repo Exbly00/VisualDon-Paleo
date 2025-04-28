@@ -29,80 +29,111 @@
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="home">
-        <h1>L'évolution du Paléo</h1>
+      <h1>L'évolution du Paléo</h1>
     </section>
     <!------------------------------------------------------------------------------------------------------------>
     <section id="editions">
       <div id="all">
-      <h1 id = "edition-year">Les éditions</h1>
-      <div id="edition">
-        <button class="button previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
-        <article id="edition-content">
-          <div id="poster-program">
-            <img src="../assets/posters/IMG_0203.JPG"  alt="Affiche de l'édition avec des détails visuels sur le programme" />
-            <button class="button programmation-button" aria-label="Voir la programmation">Programmation</button>
-            <div id="popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-              <div class="popup-content">
+        <h1 id="edition-year">Les éditions</h1>
+        <div id="edition">
+          <button
+            class="button previous-button"
+            aria-label="Voir l'édition précédente"
+          >
+            Édition précédente
+          </button>
+          <article id="edition-content">
+            <div id="poster-program">
+              <img
+                src="../assets/posters/IMG_0203.JPG"
+                style="height: 400px"
+                alt="Affiche de l'édition avec des détails visuels sur le programme"
+              />
+              <button
+                class="button programmation-button"
+                aria-label="Voir la programmation"
+              >
+                Programmation
+              </button>
+              <div
+                id="popup"
+                class="popup hidden"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="popup-title"
+              >
+                <div class="popup-content">
                   <h2 id="popup-title">Programmation</h2>
                   <p>Voici la programmation du festival…</p>
-                  <button class="close-button" aria-label="Fermer la fenêtre">x</button>
-              </div>
-          </div>
-          </div>
-          <div id="edition-details">
-            <div id="datas">
-              <div class="data-column">
-                <dl>
-                  <dt>Scène</dt>
-                  <dd class="data-scenes">3</dd>
-                  <dt>Concerts</dt>
-                  <dd class="data-concerts">3</dd>
-                  <dt>Visiteurs</dt>
-                  <dd class="data-visitors">3</dd>
-                  <dt>Volontaires</dt>
-                  <dd class="data-volunteers">3</dd>
-                </dl>
-              </div>
-              <div class="data-column">
-                <dl>
-                  <dt>Genres</dt>
-                  <dd class="data-genres">3</dd>
-                  <dt>Headliners</dt>
-                  <dd class="data-headliners">3</dd>
-                </dl>
+                  <button class="close-button" aria-label="Fermer la fenêtre">
+                    x
+                  </button>
+                </div>
               </div>
             </div>
-          
-            <div id="description">
-              <h3>Points notables</h3>
-              <p>Changement de nom, car il est désormais certain que Paléo s'installera dès l'été 1984 à Vich, un petit village situé à 5 kilomètres de Nyon. Fin novembre, Paléo prend une terrible douche froide : la commune de Vich refuse que le Festival s'installe sur son territoire. Retour au point de départ.</p>
+            <div id="edition-details">
+              <div id="datas">
+                <div class="data-column">
+                  <dl>
+                    <dt>Scène</dt>
+                    <dd class="data-scenes">3</dd>
+                    <dt>Concerts</dt>
+                    <dd class="data-concerts">3</dd>
+                    <dt>Visiteurs</dt>
+                    <dd class="data-visitors">3</dd>
+                    <dt>Volontaires</dt>
+                    <dd class="data-volunteers">3</dd>
+                  </dl>
+                </div>
+                <div class="data-column">
+                  <dl>
+                    <dt>Genres</dt>
+                    <dd class="data-genres">3</dd>
+                    <dt>Headliners</dt>
+                    <dd class="data-headliners">3</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div id="description">
+                <h3>Points notables</h3>
+                <p>
+                  Changement de nom, car il est désormais certain que Paléo
+                  s'installera dès l'été 1984 à Vich, un petit village situé à 5
+                  kilomètres de Nyon. Fin novembre, Paléo prend une terrible
+                  douche froide : la commune de Vich refuse que le Festival
+                  s'installe sur son territoire. Retour au point de départ.
+                </p>
+              </div>
             </div>
-          </div>
-          
-        </article>
-        <button class="button next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
+          </article>
+          <button
+            class="button next-button"
+            aria-label="Voir l'édition suivante"
+          >
+            Édition suivante
+          </button>
+        </div>
+        <input id="edition-range" type="range" min="1" max="48" step="1" />
       </div>
-    <input id="edition-range" type="range" min="1" max="48" step="1">
-    </div> 
     </section>
-    
-    
+
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="posters">
       <div class="buttons">
         <button id="play-button">Pause</button>
       </div>
-      <div class="posters"> 
+      <div class="posters">
         <div id="previous-poster">
-          <img id="previous-poster" src="" style="height:400px">
+          <img id="previous-poster" src="" style="height: 400px" />
           <h3></h3>
         </div>
         <div class="squares">
           <svg id="#canva"></svg>
         </div>
         <div id="next-poster">
-          <img  src="" style="height:400px">
+          <img src="" style="height: 400px" />
           <h3></h3>
         </div>
       </div>
@@ -110,8 +141,8 @@
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="genres">
-        <h1>Les genres</h1>
-        <div class="viz"></div>
+      <h1>Les genres</h1>
+      <div class="viz"></div>
     </section>
   </body>
 </html>
