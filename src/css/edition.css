@@ -1,3 +1,8 @@
+#edition-content,
+#poster-program {
+  height: auto;           /* plus de « height: 100% » qui bride tout */
+}
+
 #edition-content {
     position: relative;
     display: flex;
@@ -109,4 +114,37 @@ input[type="range"] {
   
 #popup {
     line-height: 1.5;
+}
+
+#editions h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    z-index: 1;
+
+
+        transform-origin: left top;     
+        transform: rotate(-10deg)       
+                    translateY(70px)
+                    translateX(-50px);   
+}
+
+/* 1. On neutralise les height existants */
+#edition-content,
+#poster-program {
+  height: auto !important;
+}
+
+/* 2. On force la taille de l'image et on bloque tout shrink/grow flexbox */
+#poster-program img {
+  flex: 0 0 auto !important;    /* ni grow, ni shrink */
+  width: 370px !important;      /* la largeur souhaitée */
+  height: auto !important;       /* ratio conservé */
+  object-fit: contain;           /* assure que l'image ne se déforme pas */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
