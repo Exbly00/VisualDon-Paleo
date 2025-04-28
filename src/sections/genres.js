@@ -4,6 +4,7 @@ import rawData from "../data/editions.json";
 // Fonction appelée par le routeur pour afficher la visualisation des genres
 export async function displayGenres() {
   const container = document.querySelector("#genres .viz");
+  const body = document.querySelector("body");
   container.innerHTML = "";
 
   // Ajout du style pour aligner la visualisation à gauche
@@ -13,9 +14,15 @@ export async function displayGenres() {
   container.style.background = "transparent"; // Fond transparent pour le conteneur
   container.style.overflow = "visible";
 
+  body.style.setProperty("background-color", "white");
+
   const svg = await chart();
   container.appendChild(svg);
 }
+
+// ----------------------------------------
+// Graphique
+// ----------------------------------------
 
 // Fonction principale qui construit le graphique
 async function chart() {
@@ -272,22 +279,41 @@ function updateLegend(
     })
     .sort((a, b) => b.percentage - a.percentage); // Tri par pourcentage décroissant
 
-  // Position de base pour la légende (ajusté pour avoir plus d'espace)
-  const legendX = outerRadius + 300; // Plus d'espace entre le graphique et la légende
-  const legendY = -height / 4; // Ajustement vertical
+  // ----------------------------------------
+  // Légendes
+  // ----------------------------------------
 
-  // Ajout de l'année en gros et en gras (comme dans le wireframe)
+  // Position de base pour la légende (ajusté pour avoir plus d'espace)
+  const legendX = outerRadius + 300;
+  const legendY = -height / 4;
+
+  // Définir les dimensions du rectangle
+  const textWidth = 300;
+  const textHeight = 150;
+
+  // Ajoute un rectangle pour le fond
+  legendContainer
+    .append("rect")
+    .attr("x", legendX - 5)
+    .attr("y", legendY - 60 - textHeight + 5)
+    .attr("width", textWidth + 10)
+    .attr("height", textHeight)
+    .attr("fill", "black")
+    .attr("transform", `rotate(-10, ${legendX}, ${legendY - 80})`);
+
+  // Ajoute l'année en texte avec une légère inclinaison
   legendContainer
     .append("text")
-    .attr("transform", `translate(${legendX}, ${legendY - 80})`)
-    .attr("font-size", "70px") // Plus grand comme dans le wireframe
+    .attr("class", "title-year")
+    .attr("transform", `translate(${legendX}, ${legendY - 80}) rotate(-10)`)
     .attr("font-weight", "bold")
-    .attr("fill", "#000")
+    .attr("fill", "white")
     .text(selectedYear);
 
-  // Ajout du titre sur deux lignes
+  // Ajout de la description
   legendContainer
     .append("text")
+    .attr("class", "title-description")
     .attr("transform", `translate(${legendX}, ${legendY})`)
     .attr("font-size", "48px")
     .attr("fill", "#000")
@@ -324,8 +350,9 @@ function updateLegend(
       .attr("fill", d3.color(color(item.genre)))
       .text(percentText);
 
-    // Genre (en noir, aligné à droite des pourcentages)
+    // Genre
     legendGroup
+      .attr("class", "title-description")
       .append("text")
       .attr("x", xOffset + 120) // Espacement entre le pourcentage et le genre
       .attr("y", yPos)

@@ -3,3 +3,12 @@
     justify-content: flex-start; /* aligne à gauche */
     padding-left: 2rem; /* optionnel : un peu d’espace à gauche */
   }
+
+  .title-year{
+    font-size: 120px;
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+.title-description{
+  font-family: "Space Grotesk", sans-serif;
+}
