@@ -377,13 +377,6 @@ function updateLegend(
       .text(item.genre);
   });
 
-  // Trouver le genre le plus représenté
-  const topGenre = genrePercentages[0]?.genre || "";
-
-  // Récupérer la vidéo de l'année sélectionnée
-  const featuredTrack = yearData.featuredTrack || {};
-  const videoUrl = featuredTrack.url || "";
-
   // Positionnement du bloc sous la légende
   const blockY =
     legendY + 90 + Math.ceil(genrePercentages.length / 2) * 60 + 80;
@@ -394,7 +387,8 @@ function updateLegend(
     .attr("class", "title-description") // <-- ici
     .attr("x", legendX)
     .attr("y", blockY)
-    .attr("font-size", "48px")
+    .attr("font-size", "60px")
+    .attr("font-weight", "bold")
     .attr("fill", "#000")
     .text("Le genre le plus représenté");
 
@@ -407,6 +401,29 @@ function updateLegend(
     .attr("font-size", "40px")
     .attr("fill", "#000")
     .text("Retrouvez un exemple du titre et de l'artiste");
+
+  // Ajout du player YouTube sous la légende
+  const featuredTrack = yearData.featuredTrack;
+  if (featuredTrack && featuredTrack.url) {
+    const youtubeId = getYoutubeId(featuredTrack.url);
+    if (youtubeId) {
+      legendContainer
+        .append("foreignObject")
+        .attr("x", legendX)
+        .attr("y", blockY + 80)
+        .attr("width", 1000)
+        .attr("height", 600).html(`
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;flex-direction:column;align-items:flex-start; margin-top:24px;">
+      <div style="font-size:60px;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;">
+        <b>${featuredTrack.artist}</b> – ${featuredTrack.title}
+      </div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${youtubeId}" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  `);
+    }
+  }
 }
 
 // ----------------------------------------
@@ -415,15 +432,18 @@ function updateLegend(
 
 // Regroupe les artistes par année et par genre
 function prepareData(festivalData) {
-  const grouped = d3.group(
-    festivalData.flatMap((yearData) =>
-      (yearData.artists || []).map((artist) => ({
-        year: yearData.year,
-        genre: artist.genre,
-      }))
-    ),
-    (d) => d.year
-  );
+  return festivalData.map((yearData) => {
+    const genreMap = d3.rollup(
+      yearData.artists || [],
+      (v) => v.length,
+      (d) => d.genre
+    );
+    return {
+      year: yearData.year,
+      genre: genreMap,
+      featuredTrack: yearData.featuredTrack,
+    };
+  });
 
   return Array.from(grouped, ([year, records]) => {
     const genreMap = d3.rollup(
@@ -454,4 +474,12 @@ function getCount(d) {
 // Formate les valeurs numériques (ex : "1 000" en français)
 function formatValue(x) {
   return isNaN(x) ? "N/A" : x.toLocaleString("fr-FR");
+}
+
+// Extrait l'ID d'une URL YouTube
+function getYoutubeId(url) {
+  if (!url) return null;
+  const regExp = /(?:youtube\.com\/.*v=|youtu\.be\/)([^&?/]+)/;
+  const match = url.match(regExp);
+  return match ? match[1] : null;
 }
