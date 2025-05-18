@@ -1,6 +1,8 @@
 import data from "../data/editions.json";
 
 const previousButton = document.querySelector(".previous-button");
+const previousNavigation = document.querySelectorAll(".nav-button")[0]; 
+const nextNavigation = document.querySelectorAll(".nav-button")[1]; 
 const nextButton = document.querySelector(".next-button");
 const posterImage = document.querySelector("#poster-program img");
 const descriptionElement = document.querySelector("#description p");
@@ -13,6 +15,8 @@ const headlinersElement = document.querySelector(".data-headliners");
 const rangeInput = document.querySelector("#edition-range");
 const editionYearTitle = document.querySelector("#edition-year");
 const popupContent = document.querySelector(`.popup-content p`);
+const nextArrow = document.querySelector("#next-arrow");
+const previousArrow = document.querySelector("#previous-arrow");
 const body = document.querySelector("body");
 
 const availableYears = Array.from({ length: 50 }, (_, i) => 1976 + i).filter(
@@ -72,8 +76,7 @@ function displayEdition(year) {
   body.style.setProperty("background-color", hexToRgba(edition.details.dominantColor) || "#444");
 
   window.location.hash = `#editions-${editionYear}`;
-  rangeInput.value = availableYears.indexOf(editionYear) + 1; 
-}
+  rangeInput.value = availableYears.indexOf(editionYear) + 1; }
 
 function hexToRgba(hex, alpha = 0.3) {
   // Retire le # si présent
@@ -95,9 +98,11 @@ function hexToRgba(hex, alpha = 0.3) {
 function updateButtons() {
   previousButton.style.display = "block";
   nextButton.style.display = "block";
+  previousArrow.style.display = "block";
+  nextArrow.style.display = "block";  
 
   const yearIndex = availableYears.indexOf(currentEditionYear);
-  
+
   previousButton.disabled = yearIndex === 0;
   nextButton.disabled = yearIndex === availableYears.length - 1;
   previousButton.innerText = `${availableYears[yearIndex - 1]}`;
@@ -105,9 +110,13 @@ function updateButtons() {
 
   if(yearIndex === 0) {
     previousButton.style.display = "none";
+    previousArrow.style.display = "none";
+
   }
   if(yearIndex === availableYears.length - 1) {
     nextButton.style.display = "none";
+    nextArrow.style.display = "none";
+
   }
 }
 
@@ -117,7 +126,7 @@ function updateRange() {
   rangeInput.value = yearIndex + 1; 
 }
 
-previousButton.addEventListener("click", () => {
+previousNavigation.addEventListener("click", () => {
   const yearIndex = availableYears.indexOf(currentEditionYear);
   if (yearIndex > 0) {
     currentEditionYear = availableYears[yearIndex - 1];
@@ -127,7 +136,7 @@ previousButton.addEventListener("click", () => {
   }
 });
 
-nextButton.addEventListener("click", () => {
+nextNavigation.addEventListener("click", () => {
   const yearIndex = availableYears.indexOf(currentEditionYear);
   if (yearIndex < availableYears.length - 1) {
     currentEditionYear = availableYears[yearIndex + 1];

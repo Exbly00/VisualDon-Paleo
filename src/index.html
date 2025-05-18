@@ -37,8 +37,8 @@
       <h1 id = "edition-year">Les éditions</h1>
       <div id="edition">
         <div class="nav-button">        
-          <button class="button previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+          <button class="previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
+          <svg id="previous-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
         </div>
         <article id="edition-content">
           <div id="poster-program">
@@ -49,7 +49,7 @@
                   <h2 id="popup-title">Programmation</h2>
                   <p>Voici la programmation du festival…</p>
                   <button class="close-button" aria-label="Fermer la fenêtre">
-                  
+                  X
                   </button>
                 </div>
               </div>
@@ -90,15 +90,27 @@
               </div>
             </div>
             <div class="nav-button">
-              <button class="button next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M22 12H2"/></svg>
+              <button class=" next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
+              <svg id="next-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M22 12H2"/></svg>
             </div>
           </div>
         </article>
 
-      </div>
+        <div class="edition-range">    
+          <input id="edition-range" type="range" min="1" max="48" step="1" list="values">
+          <datalist id="values">
+            <option value="1976" label="1976"></option>
+            <option value="1985" label="1985"></option>
+            <option value="1995" label="1995"></option>
+            <option value="2005" label="2005"></option>
+            <option value="2015" label="2015"></option>
+            <option value="2025" label="2025"></option>
+          </datalist>
+        </div>
       
-    <input id="edition-range" type="range" min="1" max="48" step="1">
+      </div>
+
+
     </div> 
     </section>
 
