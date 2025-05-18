@@ -381,10 +381,49 @@ function updateLegend(
   const blockY =
     legendY + 90 + Math.ceil(genrePercentages.length / 2) * 60 + 80;
 
+  // ...après le .text("Le genre le plus représenté");
+
+  const topGenre = genrePercentages[0]?.genre || "";
+  const genreRectWidth = 450;
+  const genreRectHeight = 110;
+
+  // Groupe pour le genre le plus représenté, penché et à côté du titre
+  const genreLabelGroup = legendContainer
+    .append("g")
+    .attr(
+      "transform",
+      `translate(${legendX + 1100}, ${
+        blockY - genreRectHeight / 2 + 40
+      }) rotate(-10)`
+    );
+
+  // Rectangle noir centré
+  genreLabelGroup
+    .append("rect")
+    .attr("x", -genreRectWidth / 2)
+    .attr("y", -genreRectHeight / 2)
+    .attr("width", genreRectWidth)
+    .attr("height", genreRectHeight)
+    .attr("fill", "black")
+    .attr("rx", 18);
+
+  // Texte du genre centré
+  genreLabelGroup
+    .append("text")
+    .attr("class", "title-year")
+    .attr("y", 8)
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .attr("font-weight", "bold")
+    .attr("font-size", "12px")
+    .attr("fill", "white")
+    .text(topGenre)
+    .attr("fill", "yellow");
+
   // Titre "Le genre le plus représenté"
   legendContainer
     .append("text")
-    .attr("class", "title-description") // <-- ici
+    .attr("class", "title-description")
     .attr("x", legendX)
     .attr("y", blockY)
     .attr("font-size", "60px")
@@ -395,7 +434,7 @@ function updateLegend(
   // Sous-texte
   legendContainer
     .append("text")
-    .attr("class", "title-description") // <-- ici aussi
+    .attr("class", "title-description")
     .attr("x", legendX)
     .attr("y", blockY + 60)
     .attr("font-size", "40px")
@@ -414,7 +453,7 @@ function updateLegend(
         .attr("width", 1000)
         .attr("height", 600).html(`
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;flex-direction:column;align-items:flex-start; margin-top:24px;">
-      <div style="font-size:60px;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;">
+      <div style="font-size:52px;font-family:'Space Grotesk',sans-serif;margin-bottom:16px;">
         <b>${featuredTrack.artist}</b> – ${featuredTrack.title}
       </div>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/${youtubeId}" 
