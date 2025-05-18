@@ -65,7 +65,7 @@ section {
   }
 
 
-  button {
+  .button {
     width: auto;
     height: auto;
     padding: 0.25rem 0.5rem; /* important pour le rendu du texte */
@@ -77,7 +77,7 @@ section {
     white-space: nowrap;
 }
 
-button:hover {
+.button:hover {
     background-color: #F25430;
     color: white;
 }

@@ -142,10 +142,10 @@ input[type="range"] {
 
 /* 2. On force la taille de l'image et on bloque tout shrink/grow flexbox */
 #poster-program img {
-  flex: 0 0 auto !important;    /* ni grow, ni shrink */
-  width: 370px !important;      /* la largeur souhaitée */
-  height: auto !important;       /* ratio conservé */
-  object-fit: contain;           /* assure que l'image ne se déforme pas */
+  flex: 0 0 auto !important;    
+  width: 370px !important;    
+  height: auto !important;       
+  object-fit: contain;         
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
@@ -154,5 +154,70 @@ input[type="range"] {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: black;
-  z-index: 1;
+  background-color: transparent;
 }
+.nav-button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+}
+
+
+.nav-button:hover {
+  color: white !important;
+  border-radius: 4px; 
+  padding: 5px;
+  border: solid 1px;
+  border-color: #F25430;
+  padding: 10px;
+
+}
+
+.nav-button:active {
+  background-color: #F25430;
+  color: white !important;
+  border-radius: 4px; 
+  padding: 5px;
+  border: solid 1px;
+  border-color: #F25430;
+  padding: 10px;
+
+}
+
+#previous-arrow, #next-arrow {
+  font-size: 2rem;
+  color: black;
+  z-index: 1;
+
+}
+
+  datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 1000px;
+  }
+  
+  option {
+    padding: 0;
+  }
+  
+  input[type="range"] {
+    width: 1000px;
+    margin: 0;
+  }
+
+  #all {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centrer les éléments horizontalement */
+    justify-content: center; /* centrer les éléments verticalement */
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+  }
+  
+
