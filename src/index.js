@@ -2,8 +2,7 @@
 
 // Les helpers pour cacher/afficher une section et colorier les liens du menu
 import { displaySection, activateLink } from "./section_display.js";
-import { displayEdition } from "./sections/editions.js";
-import { initPopup } from "./sections/editions.js";
+import { displayEdition, initPopup, availableYears } from "./sections/editions.js";
 import { displayGenres } from "./sections/genres.js";
 import { displayPoster } from "./sections/poster.js";
 
@@ -20,16 +19,17 @@ const router = () => {
       displaySection("#home");
       break;
 
-    case "#editions":
-      if(hashSplit[1]) {
-        displaySection("#editions");
-        displayEdition(hashSplit[1]);
-      } else {
-        displaySection("#editions");
-        displayEdition(1976);
-      }
-      initPopup();
-      break;
+        case "#editions":
+          displaySection("#editions");
+          const year = Number(hashSplit[1]);
+          if (availableYears.includes(year)) {
+            displayEdition(year);
+          } else {
+            displayEdition(1976);
+          }
+          initPopup();
+          break;
+        
 
     case "#posters":
       displaySection("#posters");

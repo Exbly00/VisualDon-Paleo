@@ -197,7 +197,7 @@ input[type="range"] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    writing-mode: vertical-lr;
+    writing-mode:vertical-lr;
     width: 1000px;
   }
   
@@ -213,8 +213,8 @@ input[type="range"] {
   #all {
     display: flex;
     flex-direction: column;
-    align-items: center; /* centrer les éléments horizontalement */
-    justify-content: center; /* centrer les éléments verticalement */
+    align-items: center; 
+    justify-content: center; 
     width: 100%;
     height: 100%;
     padding: 0.5rem;
