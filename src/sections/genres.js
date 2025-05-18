@@ -283,7 +283,7 @@ function updateLegend(
   // Légendes
   // ----------------------------------------
 
-  // Position de base pour la légende (ajusté pour avoir plus d'espace)
+  // Position de base pour la légende
   const legendX = outerRadius + 300;
   const legendY = -height / 4;
 
@@ -291,24 +291,40 @@ function updateLegend(
   const textWidth = 300;
   const textHeight = 150;
 
-  // Ajoute un rectangle pour le fond
-  legendContainer
-    .append("rect")
-    .attr("x", legendX - 5)
-    .attr("y", legendY - 60 - textHeight + 5)
-    .attr("width", textWidth + 10)
-    .attr("height", textHeight)
-    .attr("fill", "black")
-    .attr("transform", `rotate(-10, ${legendX}, ${legendY - 80})`);
+  // Dimensions adaptées au texte de l'année
+  const yearRectWidth = 320;
+  const yearRectHeight = 140; // Hauteur réduite pour mieux centrer
 
-  // Ajoute l'année en texte avec une légère inclinaison
-  legendContainer
+  // Groupe pour la date et son fond noir, penché et centré
+  const yearLabelGroup = legendContainer
+    .append("g")
+    .attr(
+      "transform",
+      `translate(${legendX + yearRectWidth / 2}, ${
+        legendY - 270 + yearRectHeight / 2
+      }) rotate(-10)`
+    );
+
+  // Rectangle noir centré
+  yearLabelGroup
+    .append("rect")
+    .attr("x", -yearRectWidth / 2)
+    .attr("y", -yearRectHeight / 2)
+    .attr("width", yearRectWidth)
+    .attr("height", yearRectHeight)
+    .attr("fill", "black");
+
+  // Texte de l'année centré
+  yearLabelGroup
     .append("text")
     .attr("class", "title-year")
-    .attr("transform", `translate(${legendX}, ${legendY - 80}) rotate(-10)`)
+    .attr("y", 15)
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
     .attr("font-weight", "bold")
+    .attr("font-size", "48px")
     .attr("fill", "white")
-    .text(selectedYear); //rajouter un espace
+    .text(selectedYear);
 
   // Ajout de la description
   legendContainer
