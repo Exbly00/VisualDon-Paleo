@@ -80,7 +80,7 @@ async function chart() {
   const color = d3
     .scaleOrdinal()
     .domain(series.map((d) => d.key))
-    .range(d3.quantize((t) => d3.interpolateSpectral(1 - t), genres.length))
+    .range(d3.schemeTableau10)
     .unknown("#ccc");
 
   // Création de l'élément SVG principal avec fond transparent
@@ -308,7 +308,7 @@ function updateLegend(
     .attr("transform", `translate(${legendX}, ${legendY - 80}) rotate(-10)`)
     .attr("font-weight", "bold")
     .attr("fill", "white")
-    .text(selectedYear);
+    .text(selectedYear); //rajouter un espace
 
   // Ajout de la description
   legendContainer
@@ -360,6 +360,37 @@ function updateLegend(
       .attr("fill", "#000")
       .text(item.genre);
   });
+
+  // Trouver le genre le plus représenté
+  const topGenre = genrePercentages[0]?.genre || "";
+
+  // Récupérer la vidéo de l'année sélectionnée
+  const featuredTrack = yearData.featuredTrack || {};
+  const videoUrl = featuredTrack.url || "";
+
+  // Positionnement du bloc sous la légende
+  const blockY =
+    legendY + 90 + Math.ceil(genrePercentages.length / 2) * 60 + 80;
+
+  // Titre "Le genre le plus représenté"
+  legendContainer
+    .append("text")
+    .attr("class", "title-description") // <-- ici
+    .attr("x", legendX)
+    .attr("y", blockY)
+    .attr("font-size", "48px")
+    .attr("fill", "#000")
+    .text("Le genre le plus représenté");
+
+  // Sous-texte
+  legendContainer
+    .append("text")
+    .attr("class", "title-description") // <-- ici aussi
+    .attr("x", legendX)
+    .attr("y", blockY + 60)
+    .attr("font-size", "40px")
+    .attr("fill", "#000")
+    .text("Retrouvez un exemple du titre et de l'artiste");
 }
 
 // ----------------------------------------
