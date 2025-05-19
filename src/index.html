@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/home.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,8 +30,77 @@
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="home">
-      <h1>L'évolution du Paléo</h1>
+      <div class="hero">
+        <img id="bg-image" src="../assets/home-image.jpg" />
+        <div class="overlay">
+          <div class="fade-orange"></div>
+
+          <h1>L'évolution du Paléo</h1>
+          <p>
+            En 2025, le Paléo Festival célèbre sa 48e édition, fruit d’une
+            longue fidélité à ses nombreux·ses enthousiastes. Depuis ses débuts,
+            il a su marquer les esprits — et aujourd’hui, nous vous propospns de
+            retracer son évolution à travers ses données.
+          </p>
+        </div>
+      </div>
+
+      <div class="intro">
+        <!-- <h2>Notre démarche</h2> -->
+
+        <!-- Première ligne -->
+        <div class="row">
+          <div class="left">
+            <h3>(re)découvrir le festival</h3>
+          </div>
+          <div class="right">
+            <p>
+              En parcourant les données fournies par le site officiel du Paléo
+              Festival, Estelle, Mathilde et Lilou, étudiantes en Ingénierie des
+              Médias à l’HEIG-VD, ont eu l’occasion de (re)découvrir le festival
+              à travers les années. Dans le cadre de ces études, on leur a
+              demandé de choisir un thème sur lequel récolter ou produire des
+              données afin de les traduire de manière visuelle, en appliquant la
+              théorie vue en cours, tel est le contexte duquel est né ce projet.
+            </p>
+          </div>
+        </div>
+
+        <!-- Deuxième ligne -->
+        <div class="row reverse">
+          <div class="right">
+            <h3>raconter son évolution</h3>
+          </div>
+          <div class="left">
+            <p>
+              Leur objectif a été de réunir et structurer ces données afin de
+              raconter l’évolution du festival à travers une approche
+              data-driven, en créant des visuels exploratoires. Les étapes
+              principales de ce projet ont été les suivantes :
+            </p>
+            <ul>
+              <li>
+                La récupération manuelle ou via web scraping des informations
+                disponibles
+              </li>
+              <li>
+                L'extraction des couleurs dominantes des affiches par édition
+                (en code hexadécimal)
+              </li>
+              <li>
+                La collecte de données textuelles et numériques sur les
+                artistes, genres musicaux et chiffres clés
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="button-container" onclick="location.href='editions.js'">
+          <button>Découvrir les visuels</button>
+        </div>
+      </div>
     </section>
+
     <!------------------------------------------------------------------------------------------------------------>
     <section id="editions">
       <div id="all">
