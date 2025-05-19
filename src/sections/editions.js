@@ -54,7 +54,7 @@ function displayEdition(year) {
     concertsElement.textContent = edition.details.concerts || "N/A";
     visitorsElement.textContent = edition.details.visitors || "N/A";
     volunteersElement.textContent = edition.details.volunteers || "N/A";
-    descriptionElement.textContent = "Ceci est un point notable.";
+    descriptionElement.textContent = edition.description;
     
     // Genres uniques
     if (edition.artists && edition.artists.length > 0) {
