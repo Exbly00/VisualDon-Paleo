@@ -7,6 +7,8 @@ const posters = document.querySelector("#posters");
 const squares = document.querySelector("#squares");
 const year = document.querySelector("#posters h2");
 const link = document.querySelector("#posters a");
+const author = document.querySelector("#posters p");
+const button = document.querySelector("#posters button");
 previousPoster.style.setProperty("width", "350px");
 
 let progress;
@@ -56,11 +58,15 @@ function updateFrame() {
     .attr("y", 0)
     .attr("fill", data[progress].details.dominantColor)
     .append("title")
-    .text(`Édition ${data[progress].year}`);
+    .text(`Édition ${data[progress].year}`)
+    .append("href")
+    .text(`#editions-${data[progress].year}`);
+    ;
 
   // Met à jour les posters
   previousPoster.src = `../assets/posters/${data[progress].year}.jpg`;
   link.href = `#editions-${data[progress].year}`;
+  author.innerText = `Dessinée par ${data[progress].details.posterDesigner}`;
   posters.style.setProperty("background-color", `${data[progress].details.dominantColor}`);
   year.innerText = data[progress].year;
 
@@ -68,5 +74,21 @@ function updateFrame() {
   progress--;
   Xaxis += 10;
 }
+
+button.addEventListener("click", () => {
+
+  if (interval) {
+    clearInterval(interval);
+    interval = null;
+    button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play"><polygon points="6 3 20 12 6 21 6 3"/></svg>`;
+  } else {
+    interval = setInterval(() => {
+      updateFrame();
+    }, 2000);
+    button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>`;
+  }
+
+});;
+
 
 export { displayPoster };

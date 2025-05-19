@@ -132,17 +132,14 @@ input[type="range"] {
                     translateX(-50px);   
 }
 
-/* 1. On neutralise les height existants */
 #edition-content,
 #poster-program {
   height: auto !important;
 }
 
-/* 2. On force la taille de l'image et on bloque tout shrink/grow flexbox */
 #poster-program img {
   flex: 0 0 auto !important;    
-  width: 370px !important;    
-  height: auto !important;       
+  width: 20rem !important;    
   object-fit: contain;         
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
