@@ -126,8 +126,6 @@ input[type="range"] {
     padding-top: 6px;
     padding-bottom: 6px;
     z-index: 1;
-
-
         transform-origin: left top;     
         transform: rotate(-10deg)       
                     translateY(70px)
