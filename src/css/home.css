@@ -1,3 +1,7 @@
+/* ============================================
+   Base globale (reset & style communs)
+============================================ */
+
 html,
 body {
   margin: 0;
@@ -8,14 +12,28 @@ body {
   scroll-behavior: smooth;
 }
 
-#home {
-  width: 100vw;
-  max-width: none !important;
-  margin: 0;
-  padding: 0;
+/* ============================================
+   Header (barre supérieure fixe)
+============================================ */
+
+.header {
+  position: relative;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  z-index: 10;
 }
 
-/* SECTION HERO */
+/* ============================================
+   Section d'accueil (home / hero)
+============================================ */
+
+#home {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  max-width: none !important;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -29,12 +47,10 @@ body {
   object-fit: cover;
 }
 
+/* Overlay noir semi-transparent centré */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -58,7 +74,7 @@ body {
   line-height: 1.6;
 }
 
-/* Dégradé orange qui remonte dans l'image */
+/* Dégradé orange vers transparent en bas de l’image */
 .fade-orange {
   position: absolute;
   bottom: 0;
@@ -70,27 +86,35 @@ body {
   z-index: 1;
 }
 
-/* SECTION INTRO ORANGE */
+/* ============================================
+   Section orange (intro)
+============================================ */
+
 .intro {
+  position: relative;
   background: #f25430;
   padding: 4rem 2rem;
   color: white;
   width: 100vw;
 }
 
-/* Titre principal */
 .intro h2 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 3rem;
+  text-align: left;
 }
+
 .intro .row {
   max-width: 1000px;
   padding-inline: 2rem;
   margin-inline: auto;
 }
 
-/* Grille de contenu */
+/* ============================================
+   Grille de contenu (row + contenu)
+============================================ */
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -137,7 +161,10 @@ ul {
   padding-left: 1.5rem;
 }
 
-/* BOUTON */
+/* ============================================
+   Bouton principal (call to action)
+============================================ */
+
 .button-container {
   text-align: center;
   margin-top: 3rem;
@@ -159,7 +186,62 @@ ul {
   background: #f2f2f2;
 }
 
-/* RESPONSIVE */
+/* ============================================
+   Logo flottant entre sections
+============================================ */
+
+.logo-floating {
+  position: absolute;
+  left: 20px;
+  top: 100%;
+  transform: translateY(-50%);
+  height: 60px;
+  z-index: 20;
+}
+
+/* ============================================
+   Pied de page (footer)
+============================================ */
+
+.site-footer {
+  background-color: #f1f1f1;
+  color: #333;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+  padding: 1rem 1rem 2rem;
+}
+
+.footer-logo {
+  height: 60px;
+  max-width: 100%;
+  display: inline-block;
+  margin: 0;
+}
+
+.site-footer p {
+  margin: 12px auto auto 0;
+  line-height: 1.4rem;
+}
+
+.footer-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-authors {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* ============================================
+   Responsive (écrans ≤ 768px)
+============================================ */
+
 @media screen and (max-width: 768px) {
   .overlay h1 {
     font-size: 2.2rem;
