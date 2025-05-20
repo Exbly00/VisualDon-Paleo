@@ -111,10 +111,6 @@ input[type="range"] {
   .data-column dd {
     margin: 0 0 1rem 0;
   }
-  
-#popup {
-    line-height: 1.5;
-}
 
 #editions h1 {
     font-size: 3rem;
@@ -128,7 +124,7 @@ input[type="range"] {
     z-index: 1;
         transform-origin: left top;     
         transform: rotate(-10deg)       
-                    translateY(70px)
+                    translateY(10px)
                     translateX(-50px);   
 }
 
@@ -157,13 +153,16 @@ input[type="range"] {
   align-items: center;
   padding: 10px;
   margin: 20px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-
+.data-headliners {
+  line-height: 1.5;
+}
 .nav-button:hover {
   color: white !important;
   border-radius: 4px; 
-  padding: 5px;
   border: solid 1px;
   border-color: #F25430;
   padding: 10px;
@@ -216,3 +215,21 @@ input[type="range"] {
   }
   
 
+#edition p {
+  width: 400px;
+  line-height: 1.5;
+
+}
+
+.popup-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;
+  font-size: large;
+}
+
+.popup-content button:hover {
+background-color: #F25430;
+}

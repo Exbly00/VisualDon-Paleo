@@ -70,12 +70,7 @@ function displayEdition(year) {
     popupContent.innerText = artists;
 
     // Headliners
-    headlinersElement.textContent = edition.artists
-      ? edition.artists
-          .slice(0, 5)
-          .map((artist) => artist.name)
-          .join(", ")
-      : "N/A";
+    headlinersElement.textContent = edition.headline.join(", ");;
 
   body.style.setProperty("background-color", hexToRgba(edition.details.dominantColor) || "#444");
 
