@@ -1,34 +1,122 @@
-
-.posters {
-    display: flex;
-    flex-direction: row;
-    gap: 80px;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-/* Style de chaque bloc d'affiche (image + titre) */
-#previous-poster,
-#next-poster {
+#animation {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
+  }
+  
+  #previous-poster {
+    width: 400px;
+    transform: translateY(-40px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+  }
+  
+  #squares {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+
+  #posters h1 {
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 5000;
+    width: fit-content;
+        transform-origin: left top;     
+        transform: rotate(-10deg)       
+                    translateY(30px)
+                    translateX(-50px); 
+    position: relative;
+      
+  }
+ #posters h2 {
+
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 1500;
+    width: fit-content;
+        transform-origin: left top;     
+        transform: rotate(-10deg)       
+                    translateY(30px)
+                    translateX(-50px); 
+
+      
+ }
+
+ #posters p {
+
+    font-size: 1rem;
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 1500;
+    width: fit-content;
+        transform-origin: left top;     
+        transform: rotate(-10deg)       
+                    translateY(30px)
+                    translateX(-50px); 
+
+      
+ }
+
+
+ #posters h3 {
+    font-size: 1rem;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: fit-content;
+ }
+
+#squares 
+    {
+        background-color: white;
+        width: 100%;
+    }
+
+#posters {
+    margin : 0 auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Pour donner une taille fixe et harmonieuse aux images */
-#previous-poster img,
-#next-poster img {
-    height: 400px;
-    width: auto;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+#posters button {
+    background: black;
+    color: white;
+    border:solid;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    margin: 1rem;
+    transform: rotate(-10deg)       
+                    translateY(30px)
+
 }
 
-/* Style des titres sous les affiches */
-#previous-poster h3,
-#next-poster h3 {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
+#posters button:hover {
+    background: #F25430;
+    color: white;
+    border:solid;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    margin: 1rem;
+    transform: rotate(-10deg)       
+                    translateY(30px)
+
 }

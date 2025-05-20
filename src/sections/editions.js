@@ -22,10 +22,14 @@ const body = document.querySelector("body");
 const availableYears = Array.from({ length: 50 }, (_, i) => 1976 + i).filter(
   (year) => year !== 2020 && year !== 2021
 );
-let currentEditionYear = availableYears[0];
+
+let currentEditionYear = 1976;
 
 // Fonction pour afficher une édition
 function displayEdition(year) {
+  currentEditionYear = year;
+  updateButtons();
+  updateRange();
 
   const editionYear = Number(year);
   const edition = data.find((ed) => ed.year === editionYear);
@@ -160,7 +164,7 @@ updateRange();
 
 
 
-export function initPopup() {
+function initPopup() {
   const popup = document.getElementById("popup");
   const openBtn = document.querySelector(".programmation-button");
   const closeBtn = popup.querySelector(".close-button");
@@ -187,4 +191,4 @@ export function initPopup() {
   });
 }
 
-export { displayEdition, hexToRgba };
+export { displayEdition, availableYears, hexToRgba, initPopup};
