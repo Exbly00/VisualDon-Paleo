@@ -1,8 +1,9 @@
 #genres .viz {
-    display: flex;
-    justify-content: flex-start; /* aligne à gauche */
-    padding-left: 2rem; /* optionnel : un peu d’espace à gauche */
-  }
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
 
   .title-year{
     font-size: 120px;

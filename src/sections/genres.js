@@ -55,10 +55,10 @@ async function chart() {
   // Échelle circulaire (pour placer les années en cercle)
   const x = d3
     .scaleBand()
-    .domain(data.map((d) => d.year))
+    .domain(data.map((d) => d.year).reverse())
     .range([0, 2 * Math.PI])
     .align(0)
-    .paddingInner(0.1); // Augmentation de l'espace entre les segments
+    .paddingInner(0.1);
 
   // Échelle radiale (pour déterminer la hauteur des arcs)
   const y = d3
