@@ -13,40 +13,42 @@ Les données disponibles couvrent plusieurs aspects du festival :
 - **Infrastructure** : Nombre de scènes, surface du terrain (en hectares)
 - **Engagement bénévole** : Nombre de bénévoles
 - **Concerts** : Nombre total de concerts par édition
-- **Éco-responsabilité** : Initiatives environnementales et sociales
-- **Inclusivité** : Engagements en faveur de l'égalité et de la diversité
-- **Musique** : Evolution des genres de musiques représentés
+- **Musique** : Evolution des genres musicaux représentés au fil des éditions
 - **Design des affiches** : Evolution des couleurs et styles des affiches du festival
 
-Nous avons contacté le Paléo afin d'obtenir des données supplémentaires, notamment des **plans spatiaux** du festival pour certaines éditions. Ces plans pourraient être vectorisés pour enrichir les visualisations.
 
 ### Ressources
 
 - [Rétrospective du Paléo](https://yeah.paleo.ch/fr/histoire)
 - [Engagement pour l'inclusivité](https://yeah.paleo.ch/fr/award-agf)
 - [Responsabilité sociale et écologique](https://yeah.paleo.ch/fr/a-propos)
+- [Outil webscraper](https://webscraper.io/documentation/open-web-scraper)
+- [Outil d'extraction des couleurs dominantes](https://lokeshdhakar.com/projects/color-thief/)
 
 ## Description
 
 La première étape consiste à **réunir et structurer** toutes les données éparses sur le site du Paléo. Cette tâche implique :
 
 - La récupération manuelle ou via **web scraping** des informations disponibles
-- La vectorisation éventuelle des plans spatiaux
 - L'extraction des **couleurs dominantes** des affiches par édition (en code hexadécimal)
 - La collecte de données textuelles et numériques sur les artistes, genres musicaux et chiffres clés
+- La structuration des données dans le fichier Json
+- L'obtention du genre musical de chaque artiste à l'aide de l'IA
+- La recherche de chanson à intégrer dans notre player dans la section featured track
+
+La seconde étape consiste à **créer la structure de travail de notre projet** à l'aide de GitHub.En outre cette étape implique la création des différentes sections de notre site web et la distribution des tâches et des sections aux membres du groupe.
 
 ## Objectif
 
-L'objectif principal est de **raconter l'évolution du Paléo Festival à travers ses données**. Le festival reflète non seulement des tendances artistiques mais aussi des préoccupations sociales et écologiques.
+L'objectif principal est de **raconter l'évolution du Paléo Festival à travers ses données**. Le festival reflète non seulement des tendances artistiques mais aussi une transformation des goûts musicaux des contemporains.
 
 Nos visualisations permettront d'illustrer :
 
 - L'évolution des **genres musicaux** présents
 - Les transformations de **l'identité visuelle** du festival via les affiches
-- L'impact croissant des initiatives **écologiques et inclusives**
 - La fréquentation et l'envergure grandissante du festival
 
-La présentation des données se fera de façon exploratoire : l'utilisateur·ice a la possiblité d'explorer par lui-même à travers les éditions présentées, mais également de façon explicative, en mettant en avant certaines tendances (comme l'évolution des genres prédominants).
+La présentation des données se fera de façon explicative : L’objectif n’est pas simplement de laisser l’utilisateur explorer librement l’ensemble des données, mais plutôt de mettre en évidence certains aspects clés de l’évolution du festival en guidant l'utilisateur à travers une narration visuelle structurée.
 
 ## Inspirations
 
@@ -70,11 +72,6 @@ Page finals_wireframes : https://www.figma.com/design/KfhDY0c22NwpjEQN3f3alx/M52
 
 Prototype : https://www.figma.com/proto/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?page-id=159%3A4&node-id=159-180&p=f&viewport=122%2C210%2C0.1&t=UYJFZwd688R7jW9Z-1&scaling=contain&content-scaling=fixed&starting-point-node-id=159%3A180
 
-## Prochaines Étapes
-
-Pour le **14 mai**, nous devons :
-
-Faire la présentation
 
 ## Références Visuelles
 
