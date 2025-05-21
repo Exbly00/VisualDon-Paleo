@@ -82,3 +82,6 @@ Nous sommes en train de rassembler des inspirations pour la représentation des 
 - http://observablehq.com/@d3/grouped-bar-chart/2
 - https://observablehq.com/@d3/streamgraph-transitions
 - https://observablehq.com/@d3/sankey-component?collection=@d3/d3-sankey 
+
+## Notre présentation
+- https://www.canva.com/design/DAGoAT6xl1c/owqz9dOzHQTocHXHjrIhOw/edit
