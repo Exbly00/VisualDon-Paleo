@@ -1,10 +1,10 @@
-# Visualisation de Données du Paléo Festival
+# Visualisation de données du Paléo Festival
 
 ## Contexte
 
 Les données utilisées pour ce projet proviennent directement du site officiel du **Paléo Festival**. L'événement, incontournable en Suisse romande depuis sa création en 1976, met à disposition des informations sur chaque édition passée. Notre objectif est de réunir, structurer et visualiser ces données afin de raconter l'histoire du festival à travers une approche data-driven.
 
-### Données Collectées
+### Données collectées
 
 Les données disponibles couvrent plusieurs aspects du festival :
 
@@ -55,15 +55,14 @@ La présentation des données se fera de façon explicative : L’objectif n’e
 Nous souhaitons nous inspirer des différentes manières de représenter des données musicales. Quelques pistes :
 
 - **Stream Graphs** pour visualiser l'évolution des genres musicaux
-- **Cartographies spatiales** pour suivre l'agrandissement du festival
 - **Palette Color Extraction** pour dégager les couleurs dominantes des affiches
 - **Timeline interactive** avec l'exposition chronologique de chaque édition
 
-## Vision Globale
+## Vision globale
 
 Notre projet s'articulera autour de deux types de visualisations :
 
-- **Ligne temporelle interactive** : Permettra de naviguer par année, avec affichage des affiches, des genres musicaux dominants, et des initiatives sociales/écologiques
+- **Ligne temporelle interactive** : Permettra de naviguer par année, avec affichage des affiches et des genres musicaux dominants
 - **Vision globale récapitulative** : Synthèse des couleurs dominantes, des genres musicaux et des chiffres clés sur l'ensemble des éditions
 
 ## Notre prototypes
@@ -71,9 +70,9 @@ Notre projet s'articulera autour de deux types de visualisations :
 - https://www.figma.com/proto/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?page-id=159%3A4&node-id=159-180&p=f&viewport=122%2C210%2C0.1&t=UYJFZwd688R7jW9Z-1&scaling=contain&content-scaling=fixed&starting-point-node-id=159%3A180
 
 
-## Références Visuelles
+## Références visuelles
 
-Nous sommes en train de rassembler des inspirations pour la représentation des données musicales et des tendances sociales. Toute suggestion de sources ou d'artistes travaillant sur des thématiques similaires est la bienvenue.
+Voici nos inspirations pour la représentation des données musicales.
 
 - https://observablehq.com/@d3/u-s-population-by-state-1790-1990
 - https://observablehq.com/@d3/radial-stacked-bar-chart/2
