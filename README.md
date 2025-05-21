@@ -20,9 +20,6 @@ Les données disponibles couvrent plusieurs aspects du festival :
 ### Ressources
 
 - [Rétrospective du Paléo](https://yeah.paleo.ch/fr/histoire)
-- [Engagement pour l'inclusivité](https://yeah.paleo.ch/fr/award-agf)
-- [Responsabilité sociale et écologique](https://yeah.paleo.ch/fr/a-propos)
-- [Outil webscraper](https://webscraper.io/documentation/open-web-scraper)
 - [Outil d'extraction des couleurs dominantes](https://lokeshdhakar.com/projects/color-thief/)
 
 ## Description
@@ -65,20 +62,19 @@ Notre projet s'articulera autour de deux types de visualisations :
 - **Ligne temporelle interactive** : Permettra de naviguer par année, avec affichage des affiches et des genres musicaux dominants
 - **Vision globale récapitulative** : Synthèse des couleurs dominantes, des genres musicaux et des chiffres clés sur l'ensemble des éditions
 
-## Notre prototypes
+## Nos wireframes
 
-- https://www.figma.com/proto/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?page-id=159%3A4&node-id=159-180&p=f&viewport=122%2C210%2C0.1&t=UYJFZwd688R7jW9Z-1&scaling=contain&content-scaling=fixed&starting-point-node-id=159%3A180
+- [Notre prototype](https://www.figma.com/proto/KfhDY0c22NwpjEQN3f3alx/M52.2---VisualDon---Pal%C3%A9o---Wireframes?page-id=159%3A4&node-id=159-180&p=f&viewport=122%2C210%2C0.1&t=UYJFZwd688R7jW9Z-1&scaling=contain&content-scaling=fixed&starting-point-node-id=159%3A180)
 
 
 ## Références visuelles
 
 Voici nos inspirations pour la représentation des données musicales.
 
-- https://observablehq.com/@d3/u-s-population-by-state-1790-1990
-- https://observablehq.com/@d3/radial-stacked-bar-chart/2
-- http://observablehq.com/@d3/grouped-bar-chart/2
-- https://observablehq.com/@d3/streamgraph-transitions
-- https://observablehq.com/@d3/sankey-component?collection=@d3/d3-sankey 
+- [Radial stacked bar chart](https://observablehq.com/@d3/radial-stacked-bar-chart/2)
+- [Grouped bar chart](http://observablehq.com/@d3/grouped-bar-chart/2)
+- [Streamgraph transition](https://observablehq.com/@d3/streamgraph-transitions)
+- [Sankey](https://observablehq.com/@d3/sankey-component?collection=@d3/d3-sankey) 
 
 ## Notre présentation
-- https://www.canva.com/design/DAGoAT6xl1c/owqz9dOzHQTocHXHjrIhOw/edit
+- [Notre présentation](https://www.canva.com/design/DAGoAT6xl1c/owqz9dOzHQTocHXHjrIhOw/edit)
