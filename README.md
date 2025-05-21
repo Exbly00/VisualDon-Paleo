@@ -29,10 +29,10 @@ Les données disponibles couvrent plusieurs aspects du festival :
 
 La première étape consiste à **réunir et structurer** toutes les données éparses sur le site du Paléo. Cette tâche implique :
 
-- La récupération manuelle ou via **web scraping** des informations disponibles
+- La récupération manuelle des informations disponibles
 - L'extraction des **couleurs dominantes** des affiches par édition (en code hexadécimal)
 - La collecte de données textuelles et numériques sur les artistes, genres musicaux et chiffres clés
-- La structuration des données dans le fichier Json
+- La structuration des données dans un fichier Json
 - L'obtention du genre musical de chaque artiste à l'aide de l'IA
 - La recherche de chanson à intégrer dans notre player dans la section featured track
 
