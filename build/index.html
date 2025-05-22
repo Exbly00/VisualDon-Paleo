@@ -1,10 +1,11 @@
 <!--L'ensemble du HTML-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,75 +13,216 @@
       rel="stylesheet"
     />
     <title>L'évolution du Paléo</title>
-    <script type="module" crossorigin src="/assets/index-zqb-ZU62.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bd_DUfk4.css">
+    <script type="module" crossorigin src="/assets/index-DwyGT7KN.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DQSoQcGz.css">
   </head>
 
   <body>
     <div class="header">
-      <a href="#home" class="logo">Paléo Festival</a>
-      <div class="header-right">
-        <a href="#editions">Éditions</a>
-        <a href="#posters">Affiches</a>
-        <a href="#genres">Genres</a>
-      </div>
-    </div>
+  <a href="#home" class="logo-container">
+    <img src="../assets/logo_paleo.png" alt="Logo Paléo Festival" class="logo-floating" />
+  </a>
+  <div class="header-right">
+    <a href="#editions">Éditions</a>
+    <a href="#posters">Affiches</a>
+    <a href="#genres">Genres</a>
+  </div>
+</div>
+
 
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="home">
-        <h1>L'évolution du Paléo</h1>
+      <div class="hero">
+        <img id="bg-image" src="../assets/home-image.jpg" />
+        <div class="overlay">
+          <div class="fade-orange"></div>
+
+          <h1>L'évolution du Paléo</h1>
+          <p>
+            En 2025, le Paléo Festival célèbre sa 48e édition, fruit d’une
+            longue fidélité à ses nombreux·ses enthousiastes. Depuis ses débuts,
+            il a su marquer les esprits — et aujourd’hui, nous vous propospns de
+            retracer son évolution à travers ses données.
+          </p>
+        </div>
+      </div>
+
+      <div class="intro">
+        <!-- <h2>Notre démarche</h2> -->
+
+        <!-- Première ligne -->
+        <div class="row">
+          <div class="left">
+            <h3>(re)découvrir le festival</h3>
+          </div>
+          <div class="right">
+            <p>
+              En parcourant les données fournies par le site officiel du Paléo
+              Festival, Estelle, Mathilde et Lilou, étudiantes en Ingénierie des
+              Médias à l’HEIG-VD, ont eu l’occasion de (re)découvrir le festival
+              à travers les années. Dans le cadre de ces études, on leur a
+              demandé de choisir un thème sur lequel récolter ou produire des
+              données afin de les traduire de manière visuelle, en appliquant la
+              théorie vue en cours, tel est le contexte duquel est né ce projet.
+            </p>
+          </div>
+        </div>
+
+        <!-- Deuxième ligne -->
+        <div class="row reverse">
+          <div class="right">
+            <h3>raconter son évolution</h3>
+          </div>
+          <div class="left">
+            <p>
+              Leur objectif a été de réunir et structurer ces données afin de
+              raconter l’évolution du festival à travers une approche
+              data-driven, en créant des visuels exploratoires. Les étapes
+              principales de ce projet ont été les suivantes :
+            </p>
+            <ul>
+              <li>
+                La récupération manuelle ou via web scraping des informations
+                disponibles
+              </li>
+              <li>
+                L'extraction des couleurs dominantes des affiches par édition
+                (en code hexadécimal)
+              </li>
+              <li>
+                La collecte de données textuelles et numériques sur les
+                artistes, genres musicaux et chiffres clés
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="button-container" onclick="location.href='editions.js'">
+          <button>Découvrir les visuels</button>
+        </div>
+      </div>
     </section>
+
     <!------------------------------------------------------------------------------------------------------------>
     <section id="editions">
+      <div id="all">
       <h1 id = "edition-year">Les éditions</h1>
       <div id="edition">
-        <button class="button previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
+        <div class="nav-button">        
+          <button class="previous-button" aria-label="Voir l'édition précédente">Édition précédente</button>
+          <svg id="previous-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg>
+        </div>
         <article id="edition-content">
           <div id="poster-program">
-            <img src="../assets/posters/IMG_0203.JPG" style="height:400px" alt="Affiche de l'édition avec des détails visuels sur le programme" />
+            <img src="../assets/posters/IMG_0203.JPG"  alt="Affiche de l'édition avec des détails visuels sur le programme" />
             <button class="button programmation-button" aria-label="Voir la programmation">Programmation</button>
-          </div>
-          <div id="edition-details">
-            <div id="datas">
-              <dl>
-                <dt>Scène</dt>
-                <dd class="data-scenes">3</dd>
-                <dt>Concerts</dt>
-                <dd class="data-concerts">3</dd>
-                <dt>Visiteurs</dt>
-                <dd class="data-visitors">3</dd>
-                <dt>Volontaires</dt>
-                <dd class="data-volunteers">3</dd>
-                <dt>Genres</dt>
-                <dd class="data-genres">3</dd>
-                <dt>Headliners</dt>
-                <dd class="data-headliners">3</dd>
-              </dl>
+            <div id="popup" class="popup hidden" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+              <div class="popup-content">
+                  <h2 id="popup-title">Programmation</h2>
+                  <p>Voici la programmation du festival…</p>
+                  <button class="close-button" aria-label="Fermer la fenêtre">
+                  X
+                  </button>
+                </div>
+              </div>
             </div>
-            <div id="description">
-              <h3>Points notables</h3>
-              <p>Changement de nom, car il est désormais certain que Paléo s'installera dès l'été 1984 à Vich, un petit village situé à 5 kilomètres de Nyon. Fin novembre, Paléo prend une terrible douche froide : la commune de Vich refuse que le Festival s'installe sur son territoire. Retour au point de départ.</p>
+            <div id="edition-details">
+              <div id="datas">
+                <div class="data-column">
+                  <dl>
+                    <dt>Scènes</dt>
+                    <dd class="data-scenes">3</dd>
+                    <dt>Concerts</dt>
+                    <dd class="data-concerts">3</dd>
+                    <dt>Visiteurs</dt>
+                    <dd class="data-visitors">3</dd>
+                    <dt>Volontaires</dt>
+                    <dd class="data-volunteers">3</dd>
+                  </dl>
+                </div>
+                <div class="data-column">
+                  <dl>
+                    <dt>Genres</dt>
+                    <dd class="data-genres">3</dd>
+                    <dt>Headliners</dt>
+                    <dd class="data-headliners">3</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div id="description">
+                <h3>Points notables</h3>
+                <p>
+                  Changement de nom, car il est désormais certain que Paléo
+                  s'installera dès l'été 1984 à Vich, un petit village situé à 5
+                  kilomètres de Nyon. Fin novembre, Paléo prend une terrible
+                  douche froide : la commune de Vich refuse que le Festival
+                  s'installe sur son territoire. Retour au point de départ.
+                </p>
+              </div>
+            </div>
+            <div class="nav-button">
+              <button class=" next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
+              <svg id="next-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M22 12H2"/></svg>
             </div>
           </div>
         </article>
-        <button class="button next-button" aria-label="Voir l'édition suivante">Édition suivante</button>
-      </div>
-      <label for="edition-range">Sélectionner une édition</label>
-      <input id="edition-range" type="range" min="1" max="48" step="1">
+
+        <div class="edition-range">    
+          <input id="edition-range" type="range" min="1" max="48" step="1" list="values">
+          <datalist id="values">
+            <option value="1976" label="1976"></option>
+            <option value="1985" label="1985"></option>
+            <option value="1995" label="1995"></option>
+            <option value="2005" label="2005"></option>
+            <option value="2015" label="2015"></option>
+            <option value="2025" label="2025"></option>
+          </datalist>
+        </div>
       
+      </div>
+
+
+    </div> 
     </section>
-    
-    
+
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="posters">
-        <h1>Les affiches</h1>
+      <h1>L'évolution des affiches</h1>
+      <h2>1976</h2>
+      <p id="author">Auteur : </p>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>      
+      </button>
+      <div id="animation">
+            <div>
+              <a href="">
+              <img id="previous-poster">
+              </a>
+            </div>
+            <div id="squares">
+          </div>
+          </div>
     </section>
     <!------------------------------------------------------------------------------------------------------------>
 
     <section id="genres">
-        <h1>Les genres</h1>
+      <h1>Les genres</h1>
+      <div class="viz"></div>
     </section>
   </body>
+<footer class="site-footer">
+  <p>
+    Site de visualisations de données sur le Paléo Festival, dans le cadre d'un projet d’études. 
+  </p>
+  <p>
+    Source principale des données : <a href="https://yeah.paleo.ch/fr">yeah.paleo.ch</a>
+  </p>
+  <div class="footer-inline">
+    <img src="../assets/heigXpaleo.png" alt="Logo HEIG-VD X Paléo" class="footer-logo">
+    <span class="footer-authors">©2025 Mathilde Ançay · Estelle Bolay · Lilou Mamin</span>
+  </div>
+</footer>
 </html>
