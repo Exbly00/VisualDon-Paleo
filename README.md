@@ -78,3 +78,15 @@ Voici nos inspirations pour la représentation des données musicales.
 
 ## Notre présentation
 - [Notre présentation](https://www.canva.com/design/DAGoAT6xl1c/owqz9dOzHQTocHXHjrIhOw/edit)
+
+## Installer le projet
+Après avoir cloné le projet vous pouvez effectuer la commande : 
+
+```bash
+npm install
+```
+Puis, pour lancer le serveur : 
+
+```bash
+npm run start
+```
