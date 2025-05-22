@@ -75,6 +75,7 @@ function updateFrame() {
   Xaxis += 10;
 }
 
+// Gestion du bouton play/pause
 button.addEventListener("click", () => {
 
   if (interval) {

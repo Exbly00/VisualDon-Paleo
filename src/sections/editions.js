@@ -50,10 +50,10 @@ function displayEdition(year) {
     posterImage.alt = `Affiche de l'édition ${editionYear}`;
 
     // Data
-    scenesElement.textContent = edition.details.scenes || "N/A";
-    concertsElement.textContent = edition.details.concerts || "N/A";
-    visitorsElement.textContent = edition.details.visitors || "N/A";
-    volunteersElement.textContent = edition.details.volunteers || "N/A";
+    scenesElement.textContent = edition.details.scenes || "?";
+    concertsElement.textContent = edition.details.concerts || "?";
+    visitorsElement.textContent = edition.details.visitors || "?";
+    volunteersElement.textContent = edition.details.volunteers || "?";
     descriptionElement.textContent = edition.description;
     
     // Genres uniques
@@ -63,7 +63,7 @@ function displayEdition(year) {
       ];
       genresElement.textContent = uniqueGenres.join(", ");
     } else {
-      genresElement.textContent = "N/A";
+      genresElement.textContent = "?";
     }
 
     const artists = edition.artists.map((artist) => artist.name).join(", ");
@@ -158,7 +158,7 @@ updateButtons();
 updateRange();
 
 
-
+//Fonction pour afficher la popup
 function initPopup() {
   const popup = document.getElementById("popup");
   const openBtn = document.querySelector(".programmation-button");
